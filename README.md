@@ -10,7 +10,8 @@ Chrome	60+	✅ Fully Supported
 Firefox	55+	✅ Fully Supported  
 Safari	12+	✅ Fully Supported  
 Edge	79+	✅ Fully Supported  
-Opera	50+	✅ Fully Supported  Daftar Perubahan V1.2  - Penambahan FeaturedPost  - Sidebar-Below  - Dropdown-Menu  
+Opera	50+	✅ Fully Supported
+Daftar Perubahan GridspeedV1.2    - Penambahan FeaturedPost    - Sidebar-Below    - Dropdown-Menu  
   
 [🔄 Download Template GridSpeed](https://github.com/Sutrisnot/Grid-Speed-Template/archive/refs/heads/main.zip)  
 [Cara Instal](#)  
