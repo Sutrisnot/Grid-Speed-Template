@@ -182,6 +182,33 @@ body{font-family:var(--font-family);background-color:var(--bg-color);color:var(-
 
 
 /* ======================================================= 2. HEADER & NAVIGASI ======================================================= */
+.header-left .description,
+.header .description {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.post-body.entry-content,
+.post-body .post-content {
+    /* overflow-x: auto membuat scrollbar horizontal muncul jika konten terlalu lebar */
+    overflow-x: auto !important; 
+    /* Max width penting agar tidak mendorong sidebar keluar */
+    max-width: 100% !important; 
+}
+
+/* TARGET 2: Konten Posting di halaman tunggal (Single Post Page) */
+.post-full {
+    overflow-x: auto !important;
+    max-width: 100% !important;
+}
+
+/* TARGET 3: Untuk elemen di dalam postingan (misalnya TABLE atau IMAGE) */
+.post-body table, 
+.post-body img {
+    /* Memastikan elemen di dalam konten tidak melebihi 100% lebar wadahnya */
+    max-width: 100% !important; 
+    height: auto !important; /* Menjaga aspek rasio gambar */
+}
 
 .main-header{background:var(--header-bg);width:100%;border-bottom:1px solid #ddd;position:relative;color:var(--bg-color);padding:3px}
 .header-wrapper{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:10px;padding-bottom:10px;padding-left:var(--space-6);padding-right:var(--space-6)}
@@ -404,14 +431,14 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: .8rem;color:
 aside#sidebar-below-header #PopularPosts2 .item-thumbnail {width: 80px;height: 60px;}
 aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.9rem;}}
 
-@media (max-width:768px){.header-content{justify-content:space-between}.header-right-mobile{order:3;justify-content:space-between;width:100px}.search-wrapper{order:1;margin-left:0;position:relative;z-index:1000}#menu-toggle{order:2;z-index:1000}.search-icon svg{fill:#fff;background:transparent}#searchbox input[type="text"]{left:-170px;right:auto;top:50%;transform:translateY(-50%) scaleX(0.95);width:0;padding:0;border:1px solid #ccc;border-radius:4px;opacity:0;background:#fff;transition:width .3s ease,left .3s ease,opacity .3s ease}#searchbox.active input[type="text"]{width:160px;left:-170px;opacity:1}.main-header{z-index:100}.content-wrapper{grid-template-columns:1fr;gap:var(--space-6);padding:0 var(--space-4);margin-top:15px}.post-grid{grid-template-columns:150px 1fr;gap:15px}.post-meta{grid-column:1 / -1}.menu-list{flex-direction:column;gap:0}.grid--sidebar{grid-template-columns:1fr}.header-center{display:none!important}.header-right-mobile{display:flex!important;align-items:center;margin-right:10px}#menu-toggle{display:block!important;color:#ffffff!important;filter:none!important;width:40px!important;height:40px!important;background-color:transparent!important;border:none!important;padding:0!important;cursor:pointer}#menu-toggle span{background-color:#ffffff!important;display:block!important;height:2px!important;width:25px!important;margin:5px 0!important;transition:all .3s ease-in-out!important}#menu-toggle span:nth-child(2){width:15px!important;margin:5px!important;margin-left:-4!important;margin-right:auto!important}#menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}#menu-toggle.active span:nth-child(2){opacity:0!important;transform:translateX(100%)!important}#menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}.mobile-nav.show{margin-top:1px;}
+@media (max-width:768px){.header-content{justify-content:space-between}.header-right-mobile{order:3;justify-content:space-between;width:100px}.search-wrapper{order:1;margin-left:0;position:relative;z-index:1000}#menu-toggle{order:2;z-index:1000}.search-icon svg{fill:#fff;background:transparent}#searchbox input[type="text"]{left:-170px;right:auto;top:50%;transform:translateY(-50%) scaleX(0.95);width:0;padding:0;border:1px solid #ccc;border-radius:4px;opacity:0;background:#fff;transition:width .3s ease,left .3s ease,opacity .3s ease}#searchbox.active input[type="text"]{width:160px;left:-170px;opacity:1}.main-header{z-index:100}.content-wrapper{grid-template-columns:1fr;gap:var(--space-6);padding:0 var(--space-4);margin-top:15px}.post-grid{grid-template-columns:150px 1fr;gap:15px}.post-meta{grid-column:1 / -1}.menu-list{flex-direction:column;gap:0}.grid--sidebar{grid-template-columns:1fr}.header-center{display:none!important}.header-right-mobile{display:flex!important;align-items:center;margin-right:10px}#menu-toggle{display:block!important;color:#ffffff!important;filter:none!important;width:40px!important;height:40px!important;background-color:transparent!important;border:none!important;padding:0!important;cursor:pointer}#menu-toggle span{background-color:#ffffff!important;display:block!important;height:2px!important;width:25px!important;margin:5px 0!important;transition:all .3s ease-in-out!important}#menu-toggle span:nth-child(2){width:15px!important;margin:5px!important;margin-left:-4!important;margin-right:auto!important}#menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}#menu-toggle.active span:nth-child(2){opacity:0!important;transform:translateX(100%)!important}#menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}.mobile-nav.show{margin-top:-5px;}
 .mobile-nav a { text-align:center }}
 
 @media (max-width:576px){.content-wrapper{grid-template-columns:1fr;gap:1.5rem}.sidebar{margin-top:20px}.post-grid{grid-template-columns:100px 1fr;gap:15px}.post-thumbnail-side img{width:100px;height:75px}.post-meta{grid-column:1 / -1}.footer-top{flex-direction:column;align-items:center;text-align:center}.footer-right{margin-top:10px}.social-icons a{margin:0 10px}.popular-posts .item-thumbnail{width:70px;height:55px}.popular-posts .item-title{font-size:.9rem}.popular-posts .item-snippet{-webkit-line-clamp:1}
 aside#sidebar-below-header #PopularPosts2 .item-thumbnail {width: 75px;height: 60px;}
 aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.9rem;}
 aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.78rem;}
-.mobile-nav.show{margin-top: 13px;}
+.mobile-nav.show{margin-top: 5px;}
 .mobile-nav a { text-align:center }}
 @media (max-width:480px){
   /* === HEADER  NAVIGASI (H) === */
@@ -432,7 +459,7 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.78rem;}
   .main-nav.active li{margin:5px 0!important;}
   .main-nav.active a{color:#fff!important;text-decoration:none!important;padding:10px;display:block;transition:background .3s;}
   .main-nav.active a:hover{background:rgba(255,255,255,.1);}
-  .mobile-nav.show{margin-top: 25px;}
+  .mobile-nav.show{margin-top: 18px;}
 
   /* --- Searchbox (H) --- */
   #searchbox.active input[type="text"],
@@ -485,12 +512,61 @@ aside#sidebar-below-header #PopularPosts2 .item-thumbnail {width: 70px;height: 5
 aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.83rem;}
 aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.7rem;}.featured-below-section .post-summary h3 {font-size: 0.9rem;}
 .featured-below-section p {font-size: 0.8rem;}
-.mobile-nav.show{margin-top: 45px;}}
+.mobile-nav.show{margin-top: 43px;}}
+pre {
+    max-height: 60vh; /* 60% dari tinggi viewport */
+    overflow-y: auto;
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: transparent;
+    color: inherit;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
 
+code {
+    background: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
 
-pre {background-color: #f4f4ff; border: 1px solid #ddd;   padding: 15px; margin: 20px 0; overflow: auto; border-radius: 6px;font-size: 14px;   line-height: 1.5;font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace; }
-pre code {display: block;white-space: pre; padding: 0;margin: 0;color: #333; }
-p code {background-color: #f0f0f0; padding: 2px 4px;border-radius: 3px;font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;font-size: 0.9em; color: #c7254e; }
+}
+pre code {
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-width: 100%;
+
+}
+
+pre code {
+    white-space: inherit !important;
+}
+
+/* Opsional: Batasi lebar konten secara umum (Jika belum dilakukan) */
+.post-body table, 
+.post-body img,
+.post-body iframe {
+    max-width: 100% !important; 
+    height: auto !important; 
+}
+pre, code {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* IE */
+    overflow-wrap: break-word;   /* Modern browser */
+}
+pre {
+    overflow-x: auto;
+    max-width: 100%;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+}
 
  ]]></b:skin>
   
@@ -668,7 +744,7 @@ h3.post-title.entry-title {
     <div class='header-left'>
       <!-- Bagian ini diambil dari <b:section> agar judul & deskripsi tetap dinamis -->
       <b:section class='header' id='header' maxwidgets='1' showaddelement='yes'>
-        <b:widget id='Header1' locked='false' title='Grid Speed Template (Header)' type='Header' version='1'>
+        <b:widget id='Header1' locked='false' title='Inteknologi.com (Header)' type='Header' version='1'>
           <b:widget-settings>
             <b:widget-setting name='displayUrl'/>
             <b:widget-setting name='displayHeight'>0</b:widget-setting>
@@ -704,12 +780,15 @@ h3.post-title.entry-title {
 <div class='header-center'>
 <nav class='main-nav'>
   <ul>
-    <li><a href='#'>Beranda</a></li>
-    
-    <li class='has-dropdown'> 
+    <li><a href='https://www.inteknologi.com/'>Home</a></li>
+    <li><a href='/search/label/blogging'>Blog-ging</a></li>
+    <li><a href='/search/label/Template'>Template</a></li>    
+    <li><a href='/search/label/teknologi'>Teknologi</a></li>
+    <li><a href='/search/label/komputer'>Media-Sosial</a></li>
+     <li class='has-dropdown'> 
       <div class='dropdown'>
         <a class='dropbtn' href='#'>
-          Link Dropdown <span class='dropdown-icon'>
+          Dropdown Menu <span class='dropdown-icon'>
             <svg viewBox='0 0 320 512' xmlns='http://www.w3.org/2000/svg'><path d='M140.3 376.8c12.6 10.2 31.1 9.5 42.8-2.2l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301.4 192 288.5 192l-256 0c-12.9 0-24.6 7.8-29.6 19.8S.7 237.5 9.9 246.6l128 128 2.4 2.2z'/></svg>
           </span>
         </a>
@@ -721,9 +800,6 @@ h3.post-title.entry-title {
         </div>
       </div>
     </li>
-    
-    <li><a href='#'>Layanan</a></li>
-    <li><a href='#'>Kontak</a></li>
   </ul>
 </nav>
 </div>
@@ -762,7 +838,7 @@ h3.post-title.entry-title {
           <b:widget-settings>
             <b:widget-setting name='showSnippet'>true</b:widget-setting>
             <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-            <b:widget-setting name='postId'>5501715024125576206</b:widget-setting>
+            <b:widget-setting name='postId'>4138765121191012805</b:widget-setting>
             <b:widget-setting name='showFirstImage'>true</b:widget-setting>
             <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
           </b:widget-settings>
@@ -1359,19 +1435,17 @@ h3.post-title.entry-title {
           </b:if>
           
           <!-- SNIPPET & READMORE -->
-      <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
-  <b:if cond='data:post.hasJumpLink'>
-    <div class='post-content'>
-      <data:post.body/>
-    </div>
-    <div class='jump-link'>
-      <a expr:href='data:post.url + &quot;#more&quot;' expr:title='data:post.title'>Readmore &#8594;</a>
-    </div>
-  <b:else/>
+     <!-- DENGAN YANG INI: -->
+<div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
+  <b:if cond='data:blog.pageType == &quot;index&quot;'>
+    <!-- HANYA TAMPILKAN SNIPPET DI HALAMAN UTAMA -->
     <div class='post-snippet'>
-      <data:post.body/> 
+      <data:post.snippet/>
     </div>
     <a class='read-more' expr:href='data:post.url'>Readmore &#8594;</a>
+  <b:else/>
+    <!-- TAMPILKAN FULL CONTENT DI HALAMAN SINGLE -->
+    <data:post.body/>
   </b:if>
 </div>
         </div>
@@ -1924,8 +1998,9 @@ h3.post-title.entry-title {
         <li><a href='/p/sitemap.html'>Sitemap</a></li>
         <li><a href='/p/privacy-policy.html'>Privacy Policy</a></li>
         <li><a href='/p/disclaimer.html'>Disclaimer</a></li>
-        <li><a href='/p/about.html'>About</a></li>
-        <li><a href='/p/contact.html'>Contact</a></li>
+        <li><a href='https://www.inteknologi.com/p/term-of-service.html'>Term of Srvice</a></li>
+        <li><a href='/p/kontak-kami.html'>About</a></li>
+        <li><a href='/p/kontak.html'>Contact</a></li>
       </ul>
     </div>
     <!-- Kolom Kanan: Sosial Media -->
