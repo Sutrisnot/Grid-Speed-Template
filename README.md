@@ -14,5 +14,5 @@ Opera	50+	✅ Fully Supported
 Daftar Perubahan [GridspeedV1.2](https://github.com/Sutrisnot/Grid-Speed-Template/blob/main/Gridspeed.V1.2.xml)      - Penambahan FeaturedPost      - Sidebar-Below      - Dropdown-Menu  
   
 [🔄 Download Template GridSpeed](https://github.com/Sutrisnot/Grid-Speed-Template/archive/refs/heads/main.zip)  
-[Cara Instal](#)  
+[Cara Instal](https://www.inteknologi.com/2025/10/cara-instal-template-gridspeed-pada.html)  
 [Setting Template](#)  
