@@ -276,6 +276,13 @@ body{font-family:var(--font-family);background-color:var(--bg-color);color:var(-
 .featured-below-section .post-summary::after {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 40%;background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));border-radius: 12px;z-index: 1;}
 .featured-below-section p {font-size: 0.95rem;color: #555;line-height: 1.6;margin: 12px 15px 15px;order: 2;}
 
+/* ===== FIX BLURRY FEATURED POST IMAGE ===== */
+.featured-below-section .image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+}
+
 /* ======================================================= 3. LAYOUT  GRID (MAIN CONTENT) ======================================================= */
 .content-wrapper{display:grid;grid-template-columns:2fr 1fr;gap:2rem;max-width:1200px;margin:0 auto;padding:0 20px;padding-top:18px;border-top:1px solid #lightgray;}
 .grid{display:grid;gap:var(--space-6)} 
@@ -529,6 +536,8 @@ pre code {display: block;white-space: pre-wrap;word-break: break-all;max-width: 
 pre, code {white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap; white-space: -o-pre-wrap;word-wrap: break-word; overflow-wrap: break-word;}
 pre {
 
+#backToTopBtn{display:none;position:fixed;bottom:50px;right:20px;z-index:99;border:none;outline:none;background-color:#04AA6D;color:white;cursor:pointer;padding:12px 15px;border-radius:50%;font-size:18px;opacity:.8;transition:opacity .3s,transform .3s;box-shadow:0 2px 5px rgba(0,0,0,.3)}
+#backToTopBtn:hover{opacity:1;background-color:#038d59}
  ]]></b:skin>
   
   <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -1971,9 +1980,56 @@ h3.post-title.entry-title {
   </div>
   </div>
 </footer>
-<!-- ======================================================= -->
-<!-- SCRIPT BACK TO TOP BUTTON -->
+<script>
+const btn = document.createElement(&#39;button&#39;);
+btn.id = &#39;myBackToTop&#39;;
+btn.title = &#39;Kembali ke Atas&#39;;
+btn.innerHTML = `
+  <svg style='width:24px;height:24px;fill:white;' viewBox='0 0 512 512'>
+    <path d='M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM377 271c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-87-87-87 87c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 167c9.4-9.4 24.6-9.4 33.9 0L377 271z'/>
+  </svg>
+`;
 
+Object.assign(btn.style, {
+  position: &#39;fixed&#39;,
+  bottom: &#39;30px&#39;,
+  right: &#39;40px&#39;,
+  width: &#39;40px&#39;,
+  height: &#39;40px&#39;,
+  background: &#39;#0088cc&#39;,
+  border: &#39;none&#39;,
+  borderRadius: &#39;50%&#39;,
+  cursor: &#39;pointer&#39;,
+  display: &#39;none&#39;,
+  alignItems: &#39;center&#39;,
+  justifyContent: &#39;center&#39;,
+  zIndex: &#39;2147483647&#39;,
+  boxShadow: &#39;0 4px 12px rgba(0,0,0,0.3)&#39;
+});
+
+document.body.appendChild(btn);
+
+window.addEventListener(&#39;scroll&#39;, function() {
+  btn.style.display = window.pageYOffset &gt; 300 ? &#39;flex&#39; : &#39;none&#39;;
+});
+
+btn.addEventListener(&#39;click&#39;, function(e) {
+  e.preventDefault();
+  
+  window.scrollTo({
+    top: 0,
+    behavior: &#39;smooth&#39;
+  });
+  
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+});
+
+setTimeout(() =&gt; {
+  btn.style.display = &#39;flex&#39;;
+  btn.style.background = &#39;green&#39;;
+}, 2000);
+</script>
   <script>
 //<![CDATA[
 // ===== LAZY LOADING IMAGES =====
