@@ -170,8 +170,8 @@ figure{margin:0}
 }
 /* ======================================================= 1. RESET & ACCESSIBILITY ======================================================= */
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;max-width:100%;overflow-x:hidden!important}
-body,.main-wrapper,.content-wrapper,.header-container,.footer-top{overflow-x:hidden!important}
+html,body{width:100%;max-width:100%;overflow-x:overflow-x:clip}
+body,.main-wrapper,.content-wrapper,.header-container,.footer-top{overflow-x:overflow-x: clip;}
 .container,.main-wrapper,.content-wrapper{box-sizing:border-box;width:100%}
 *[style*="width"]{max-width:100%!important}
 
@@ -263,8 +263,8 @@ body{font-family:var(--font-family);background-color:var(--bg-color);color:var(-
 /* ==== Gambar ==== */ 
 .featured-below-section .image {order: -1;width: 100%; aspect-ratio: 16/9;object-fit: cover;display: block;border-radius: 12px;transition: transform 0.3s ease, filter 0.3s ease;}
 .featured-below-section .post-summary:hover .image {filter: brightness(0.9);transform: scale(1.02);}
-.featured-below-section .post-summary h3 {position: absolute;bottom: 15px;left: 50%;transform: translateX(-50%);width: 90%;text-align: center;color: #fff;font-size: 1.4rem;font-weight: 600;margin: 0;z-index: 2;}
-.featured-below-section .post-summary h3 a {color: #fff;text-decoration: none;text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);}
+.featured-below-section .post-summary h2 {position: absolute;bottom: 15px;left: 50%;transform: translateX(-50%);width: 90%;text-align: center;color: #fff;font-size: 1.2rem;font-weight: 600;margin: 0;z-index: 2;}
+.featured-below-section .post-summary h2 a {color: #fff;text-decoration: none;text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);}
 .featured-below-section .post-summary::after {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 40%;background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));border-radius: 12px;z-index: 1;}
 .featured-below-section p {font-size: 0.95rem;color: #555;line-height: 1.6;margin: 12px 15px 15px;order: 2;}
 
@@ -325,7 +325,7 @@ body{font-family:var(--font-family);background-color:var(--bg-color);color:var(-
 .post-body p { margin-bottom: 1em !important;line-height: 1.6 !important;}
 .post-body a { color: #007bff;text-decoration: none;}
 .post-body a:hover {color: #0056b3; /* Biru yang lebih gelap */text-decoration: underline; /* Menambahkan garis bawah saat di-hover */}
-.post-body a:active {color: #dc3545; /* Merah */}
+a.read-more {color:#fff;}
 
 .button-wrapper {display: flex;justify-content: space-around; padding: 0 10px;margin: 20px 0;}
 a.button {text-decoration: none !important; border: none;padding: 14px 25px;text-align: center;display: inline-block;font-size: 16px;transition-duration: 0.4s;cursor: pointer;border-radius: 5px;font-weight: bold; color:#fff;width: 130px}
@@ -486,10 +486,9 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.78rem;}
   .sidebar-below-header {flex: 1 1 100% !important;max-width: 100% !important;margin-top: 0 !important;}
 
   /* --- Featured Post Detail (F/S) --- */
-  .featured-below-section .post-summary h3 {font-size: 1.2rem;bottom: 12px;width: 92%;}
+  .featured-below-section .post-summary h2 a {display:none;font-size: 1.2rem;bottom: 12px;width: 92%;}
   .featured-below-section p {font-size: 0.85rem;}
-  /* Duplikasi: */
-  .featured-below-section p {font-size: 0.9rem;}
+
 
   /* --- Popular Posts Sidebar (F/S) --- */
   aside#sidebar-below-header #PopularPosts2 .item-content {flex-direction: row;align-items: center;gap: 10px;}
@@ -539,6 +538,14 @@ pre {
 #backToTopBtn{display:none;position:fixed;bottom:50px;right:20px;z-index:99;border:none;outline:none;background-color:#04AA6D;color:white;cursor:pointer;padding:12px 15px;border-radius:50%;font-size:18px;opacity:.8;transition:opacity .3s,transform .3s;box-shadow:0 2px 5px rgba(0,0,0,.3)}
 #backToTopBtn:hover{opacity:1;background-color:#038d59}
 
+.table-responsive {overflow-x: auto; margin: 15px 0;}
+.table-responsive table {width: 100%;border-collapse: collapse;font-family: Arial, sans-serif;margin-bottom: 20px;}
+
+.table-responsive th {background-color: #007bff; color: white;padding: 12px 15px;text-align: left;border: 1px solid #dee2e6;}
+.table-responsive td {padding: 10px 15px;border: 1px solid #dee2e6;vertical-align: top;}
+
+.table-responsive tbody tr:nth-child(even) {background-color: #f8f9fa; }
+.table-responsive tbody tr:hover {background-color: #e2e6ea; }
 
  ]]></b:skin>
   
@@ -802,7 +809,7 @@ h3.post-title.entry-title {
           <b:includable id='content'>
   <div class='post-summary'>
     <b:if cond='data:showPostTitle and data:postTitle != &quot;&quot;'>
-      <h3><a expr:href='data:postUrl'><data:postTitle/></a></h3>
+      <h2><a expr:href='data:postUrl'><data:postTitle/></a></h2>
     </b:if>
     <b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
       <p>
@@ -827,7 +834,7 @@ h3.post-title.entry-title {
     <!-- Sidebar Tambahan (ID unik) -->
     <aside class='sidebar sidebar-below-header' id='sidebar-below-header' itemscope='itemscope' itemtype='https://schema.org/WPSideBar' style='flex:1 1 30%;'>
       <b:section class='sidebar-section-below-header' id='sidebar_below_header' name='Sidebar Tambahan di Bawah Header' preferred='yes' showaddelement='yes'>
-        <b:widget id='PopularPosts2' locked='false' title='Inteknologi_Article' type='PopularPosts'>
+        <b:widget id='PopularPosts2' locked='false' title='Inteknologi_Article' type='PopularPosts' version='1'>
           <b:widget-settings>
             <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
             <b:widget-setting name='showThumbnails'>true</b:widget-setting>
@@ -853,13 +860,13 @@ h3.post-title.entry-title {
           <!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
           <div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
             <b:if cond='data:post.featuredImage.isResizable or data:post.thumbnail'>
-              <div class='item-thumbnail'>
-                <a expr:href='data:post.href' target='_blank'>
-                  <b:with value='data:post.featuredImage.isResizable                                  ? resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;)                                  : data:post.thumbnail' var='image'>
-                    <img alt='' border='0' expr:src='data:image'/>
-                  </b:with>
-                </a>
-              </div>
+            <div class='item-thumbnail'>
+    <a expr:aria-label='data:post.title' expr:href='data:post.href' target='_blank'>
+        <b:with value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+            <img border='0' expr:alt='data:post.title' expr:src='data:image'/>
+        </b:with>
+    </a>
+</div>
             </b:if>
             <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
             <b:if cond='data:showSnippets'>
@@ -1906,14 +1913,14 @@ h3.post-title.entry-title {
           <div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
             
      <b:if cond='data:post.thumbnail'>
-  <div class='item-thumbnail'>
-    <a expr:aria-label='data:post.title' expr:href='data:post.href'> 
-      <b:with value='data:post.thumbnail' var='image'> 
-        <img alt='Thumbnail' border='0' expr:src='data:image'/>
-      </b:with>
-      <span class='sr-only'><data:post.title/></span>
+       
+       <div class='item-thumbnail'>
+    <a expr:aria-label='data:post.title' expr:href='data:post.href' target='_blank'>
+        <b:with value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+            <img border='0' expr:alt='data:post.title' expr:src='data:image'/>
+        </b:with>
     </a>
-  </div>
+</div>
 </b:if>
             
             <div class='item-text-content'>
