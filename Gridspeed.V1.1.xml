@@ -431,8 +431,14 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: .8rem;color:
 aside#sidebar-below-header #PopularPosts2 .item-thumbnail {width: 80px;height: 60px;}
 aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.9rem;}}
 
-@media (max-width:768px){.header-content{justify-content:space-between}.header-right-mobile{order:3;justify-content:space-between;width:100px;margin-left: auto !important}.search-wrapper{order:1;margin-left:0;position:relative;z-index:1000}#menu-toggle{order:2;z-index:1000}.search-icon svg{fill:#fff;background:transparent}#searchbox input[type="text"]{left:-170px;right:auto;top:50%;transform:translateY(-50%) scaleX(0.95);width:0;padding:0;border:1px solid #ccc;border-radius:4px;opacity:0;background:#fff;transition:width .3s ease,left .3s ease,opacity .3s ease}#searchbox.active input[type="text"]{width:160px;left:-170px;opacity:1}.main-header{z-index:100}.content-wrapper{grid-template-columns:1fr;gap:var(--space-6);padding:0 var(--space-4);margin-top:15px}.post-grid{grid-template-columns:150px 1fr;gap:15px}.post-meta{grid-column:1 / -1}.menu-list{flex-direction:column;gap:0}.grid--sidebar{grid-template-columns:1fr}.header-center{display:none!important}.header-right-mobile{display:flex!important;align-items:center;margin-right:10px}#menu-toggle{display:block!important;color:#ffffff!important;filter:none!important;width:40px!important;height:40px!important;background-color:transparent!important;border:none!important;padding:0!important;cursor:pointer}#menu-toggle span{background-color:#ffffff!important;display:block!important;height:2px!important;width:25px!important;margin:5px 0!important;transition:all .3s ease-in-out!important}#menu-toggle span:nth-child(2){width:15px!important;margin:5px!important;margin-left:-4!important;margin-right:auto!important}#menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}#menu-toggle.active span:nth-child(2){opacity:0!important;transform:translateX(100%)!important}#menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}.mobile-nav.show{margin-top:-5px;}
+@media (max-width:768px){.header-content{justify-content:space-between}.header-right-mobile{order:3;justify-content:space-between;width:100px;margin-left: auto !important}.search-wrapper{order:1;margin-left:0;position:relative;z-index:1000}#menu-toggle{order:2;z-index:1000}.search-icon svg{fill:#fff;background:transparent}#searchbox input[type="text"]{left:-170px;right:auto;top:50%;transform:translateY(-50%) scaleX(0.95);width:0;padding:0;border:1px solid #ccc;border-radius:4px;opacity:0;background:#fff;transition:width .3s ease,left .3s ease,opacity .3s ease}#searchbox.active input[type="text"]{width:160px;left:-170px;opacity:1}.main-header{z-index:100}.content-wrapper{grid-template-columns:1fr;gap:var(--space-6);padding:0 var(--space-4);margin-top:15px}.post-grid{grid-template-columns:150px 1fr;gap:15px}.post-meta{grid-column:1 / -1}.menu-list{flex-direction:column;gap:0}.grid--sidebar{grid-template-columns:1fr}.header-center{display:none!important}.header-right-mobile{display:flex!important;align-items:center;margin-right:10px}#menu-toggle{display:block!important;color:#ffffff!important;filter:none!important;width:40px!important;height:40px!important;background-color:transparent!important;border:none!important;padding:0!important;cursor:pointer}
+
+#menu-toggle span{background-color:#ffffff!important;display:block!important;height:2px!important;width:25px!important;margin:5px 0!important;transition:all .3s ease-in-out!important}#menu-toggle span:nth-child(2){width:15px!important;margin:5px!important;margin-left:-4!important;margin-right:auto!important}
+
+#menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}#menu-toggle.active span:nth-child(2){opacity:0!important;transform:translateX(100%)!important}#menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
+.mobile-nav.show{margin-top:-5px;}
 .mobile-nav a { text-align:center }}
+
 
 @media (max-width:576px){.content-wrapper{grid-template-columns:1fr;gap:1.5rem}.sidebar{margin-top:20px}.post-grid{grid-template-columns:100px 1fr;gap:15px}.post-thumbnail-side img{width:100px;height:75px}.post-meta{grid-column:1 / -1}.footer-top{flex-direction:column;align-items:center;text-align:center}.footer-right{margin-top:10px}.social-icons a{margin:0 10px}.popular-posts .item-thumbnail{width:70px;height:55px}.popular-posts .item-title{font-size:.9rem}.popular-posts .item-snippet{-webkit-line-clamp:1}
 aside#sidebar-below-header #PopularPosts2 .item-thumbnail {width: 75px;height: 60px;}
@@ -776,12 +782,10 @@ h3.post-title.entry-title {
             <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
-  <!-- Only display title if it's non-empty -->
   <b:if cond='data:title != &quot;&quot;'>
     <h2 class='title'><data:title/></h2>
   </b:if>
   <b:include name='content'/>
-
   <b:include name='quickedit'/>
 </b:includable>
           <b:includable id='content'>
@@ -794,10 +798,9 @@ h3.post-title.entry-title {
         <data:postSummary/>
       </p>
     </b:if>
-    <b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
-      <img class='image' expr:alt='data:post.title' expr:src='data:postFirstImage'/>
-
-    </b:if>
+  <b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
+  <img alt='Featured image' class='image' expr:src='data:postFirstImage'/>
+</b:if>
   </div>
 
   <style type='text/css'>
@@ -813,12 +816,12 @@ h3.post-title.entry-title {
     <!-- Sidebar Tambahan (ID unik) -->
     <aside class='sidebar sidebar-below-header' id='sidebar-below-header' itemscope='itemscope' itemtype='https://schema.org/WPSideBar' style='flex:1 1 30%;'>
       <b:section class='sidebar-section-below-header' id='sidebar_below_header' name='Sidebar Tambahan di Bawah Header' preferred='yes' showaddelement='yes'>
-        <b:widget id='PopularPosts2' locked='false' title='Postingan Populer' type='PopularPosts'>
+        <b:widget id='PopularPosts2' locked='false' title='Inteknologi_Article' type='PopularPosts'>
           <b:widget-settings>
             <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
             <b:widget-setting name='showThumbnails'>true</b:widget-setting>
             <b:widget-setting name='showSnippets'>true</b:widget-setting>
-            <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
+            <b:widget-setting name='timeRange'>LAST_MONTH</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
@@ -1324,9 +1327,12 @@ h3.post-title.entry-title {
         </a>
       </span>
     </b:if>
-<a class='home-link' expr:href='data:blog.homepageUrl'>
-   <svg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d='M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM200 256a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zM144 432c0-44.2 35.8-80 80-80l64 0c44.2 0 80 35.8 80 80 0 8.8-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16z'/></svg>
-    </a>
+<a aria-label='Kembali ke Beranda' class='home-link' expr:href='data:blog.homepageUrl' title='Beranda'>
+  <svg aria-hidden='true' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+    <path d='M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM200 256a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zM144 432c0-44.2 35.8-80 80-80l64 0c44.2 0 80 35.8 80 80 0 8.8-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16z'/>
+  </svg>
+  <span class='sr-only'>Beranda</span>
+</a>
     <b:if cond='data:olderPageUrl'>
       <span id='blog-pager-older-link'>
         <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>
@@ -1347,15 +1353,11 @@ h3.post-title.entry-title {
         
         <!-- THUMBNAIL SIDE (KIRI) -->
         <div class='post-thumbnail-side'>
-          <b:if cond='data:post.firstImageUrl'>
-            <a expr:href='data:post.url'>
-              <img alt='data:post.title' expr:src='data:post.firstImageUrl'/>
-            </a>
-          <b:else/>
-            <div class='no-thumbnail'>
-              <span>No Image</span>
-            </div>
-          </b:if>
+        <b:if cond='data:post.firstImageUrl'>
+  <a expr:href='data:post.url'>
+    <img alt='Post thumbnail' expr:src='data:post.firstImageUrl'/>
+  </a>
+</b:if>
         </div>
         
         <!-- CONTENT SIDE (KANAN) -->
@@ -1883,33 +1885,35 @@ h3.post-title.entry-title {
       <b:loop values='data:posts' var='post'>
       <li>
         <b:if cond='!data:showThumbnails'>
-        <b:if cond='!data:showSnippets'>
-          <a expr:href='data:post.href'><data:post.title/></a>
-        <b:else/>
-          <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
-          <div class='item-snippet'><data:post.snippet/></div>
-        </b:if>
-      <b:else/>
-        <div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
-          
-          <b:if cond='data:post.thumbnail'>
-            <div class='item-thumbnail'>
-              <a expr:aria-label='data:post.title' expr:href='data:post.href'> 
-                <b:with value='data:post.thumbnail' var='image'> 
-                  <img alt='' border='0' expr:src='data:image'/>
-                </b:with>
-              </a>
-            </div>
+          <b:if cond='!data:showSnippets'>
+            <a expr:aria-label='data:post.title' expr:href='data:post.href'><data:post.title/></a>
+          <b:else/>
+            <div class='item-title'><a expr:aria-label='data:post.title' expr:href='data:post.href'><data:post.title/></a></div>
+            <div class='item-snippet'><data:post.snippet/></div>
           </b:if>
-          
-          <div class='item-text-content'>
-            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
-            <b:if cond='data:showSnippets'>
-              <div class='item-snippet'><data:post.snippet/></div>
-            </b:if>
+        <b:else/>
+          <div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
+            
+     <b:if cond='data:post.thumbnail'>
+  <div class='item-thumbnail'>
+    <a expr:aria-label='data:post.title' expr:href='data:post.href'> 
+      <b:with value='data:post.thumbnail' var='image'> 
+        <img alt='Thumbnail' border='0' expr:src='data:image'/>
+      </b:with>
+      <span class='sr-only'><data:post.title/></span>
+    </a>
+  </div>
+</b:if>
+            
+            <div class='item-text-content'>
+              <div class='item-title'><a expr:aria-label='data:post.title' expr:href='data:post.href'><data:post.title/></a></div>
+              <b:if cond='data:showSnippets'>
+                <div class='item-snippet'><data:post.snippet/></div>
+              </b:if>
+            </div>
           </div>
-        </div>
-       </b:if>   </li>
+        </b:if>
+      </li>
       </b:loop>
     </ul>
     <b:include name='quickedit'/>
@@ -1967,808 +1971,229 @@ h3.post-title.entry-title {
   </div>
   </div>
 </footer>
-<script>
-const btn = document.createElement(&#39;button&#39;);
-btn.id = &#39;myBackToTop&#39;;
-btn.title = &#39;Kembali ke Atas&#39;;
-btn.innerHTML = `
-  <svg style='width:24px;height:24px;fill:white;' viewBox='0 0 512 512'>
-    <path d='M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM377 271c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-87-87-87 87c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 167c9.4-9.4 24.6-9.4 33.9 0L377 271z'/>
-  </svg>
-`;
+<!-- ======================================================= -->
+<!-- SCRIPT BACK TO TOP BUTTON -->
 
-Object.assign(btn.style, {
-  position: &#39;fixed&#39;,
-  bottom: &#39;30px&#39;,
-  right: &#39;40px&#39;,
-  width: &#39;40px&#39;,
-  height: &#39;40px&#39;,
-  background: &#39;#0088cc&#39;,
-  border: &#39;none&#39;,
-  borderRadius: &#39;50%&#39;,
-  cursor: &#39;pointer&#39;,
-  display: &#39;none&#39;,
-  alignItems: &#39;center&#39;,
-  justifyContent: &#39;center&#39;,
-  zIndex: &#39;2147483647&#39;,
-  boxShadow: &#39;0 4px 12px rgba(0,0,0,0.3)&#39;
-});
-
-document.body.appendChild(btn);
-
-window.addEventListener(&#39;scroll&#39;, function() {
-  btn.style.display = window.pageYOffset &gt; 300 ? &#39;flex&#39; : &#39;none&#39;;
-});
-
-btn.addEventListener(&#39;click&#39;, function(e) {
-  e.preventDefault();
-  
-  window.scrollTo({
-    top: 0,
-    behavior: &#39;smooth&#39;
-  });
-  
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
-});
-
-setTimeout(() =&gt; {
-  btn.style.display = &#39;flex&#39;;
-  btn.style.background = &#39;green&#39;;
-}, 2000);
-</script>
-<script>
-// ===== ACCESSIBILITY FUNCTIONS =====
-function initKeyboardNavigation() {
-    // Trap focus in mobile menu when open
-    function trapFocus(element) {
-        const focusableElements = element.querySelectorAll(
-            &#39;a[href], button, input, textarea, select, details, [tabindex]:not([tabindex=&quot;-1&quot;])&#39;
-        );
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-
-        element.addEventListener(&#39;keydown&#39;, function(e) {
-            if (e.key === &#39;Tab&#39;) {
-                if (e.shiftKey) {
-                    if (document.activeElement === firstElement) {
-                        e.preventDefault();
-                        lastElement.focus();
-                    }
-                } else {
-                    if (document.activeElement === lastElement) {
-                        e.preventDefault();
-                        firstElement.focus();
-                    }
+  <script>
+//<![CDATA[
+// ===== LAZY LOADING IMAGES =====
+function initLazyLoading() {
+    var images = document.querySelectorAll('img[data-src]');
+    
+    if ('IntersectionObserver' in window) {
+        var imageObserver = new IntersectionObserver(function(entries) {
+            for (var i = 0; i < entries.length; i++) {
+                var entry = entries[i];
+                if (entry.isIntersecting) {
+                    var lazyImage = entry.target;
+                    lazyImage.src = lazyImage.getAttribute('data-src');
+                    lazyImage.classList.remove('lazy');
+                    imageObserver.unobserve(lazyImage);
                 }
             }
         });
-    }
 
-    // Enhanced mobile menu keyboard handling
-    const hamburger = document.querySelector(&#39;.hamburger-menu&#39;);
-    const mobileNav = document.querySelector(&#39;.mobile-nav&#39;);
-    
-    if (hamburger &amp;&amp; mobileNav) {
-        hamburger.addEventListener(&#39;click&#39;, () =&gt; {
-            if (e.key === &#39;Enter&#39; || e.key === &#39; &#39;) {
-                e.preventDefault();
-                this.click();
-            }
-        });
-
-        // Trap focus when mobile menu is open
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (!mobileNav.hidden) {
-                    trapFocus(mobileNav);
-                    // Focus first item when menu opens
-                    const firstLink = mobileNav.querySelector(&#39;a&#39;);
-                    if (firstLink) firstLink.focus();
-                }
-            });
-        });
-
-        observer.observe(mobileNav, { attributes: true, attributeFilter: [&#39;hidden&#39;] });
-    }
-
-    // Skip link functionality
-    const skipLinks = document.querySelectorAll(&#39;.skip-link&#39;);
-    skipLinks.forEach(link =&gt; {
-        link.addEventListener(&#39;click&#39;, function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute(&#39;href&#39;).substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                targetElement.setAttribute(&#39;tabindex&#39;, &#39;-1&#39;);
-                targetElement.focus();
-                targetElement.removeAttribute(&#39;tabindex&#39;);
-            }
-        });
-    });
-
-    // Enhanced search keyboard shortcuts
-    document.addEventListener(&#39;keydown&#39;, function(e) {
-        // Ctrl+K or / for search focus
-        if ((e.ctrlKey &amp;&amp; e.key === &#39;k&#39;) || e.key === &#39;/&#39;) {
-            e.preventDefault();
-            let searchInput = document.querySelector(&#39;#search-input-desktop&#39;) || 
-                            document.querySelector(&#39;#search-input-mobile&#39;);
-            
-            if (searchInput) {
-                // Open desktop search if closed
-                const searchToggle = document.querySelector(&#39;.search-toggle-button&#39;);
-                if (searchToggle &amp;&amp; !searchToggle.classList.contains(&#39;active&#39;)) {
-                    searchToggle.click();
-                }
-                
-                setTimeout(() =&gt; {
-                    searchInput.focus();
-                }, 100);
-            }
+        for (var i = 0; i < images.length; i++) {
+            imageObserver.observe(images[i]);
         }
-
-        // Escape key behaviors
-        if (e.key === &#39;Escape&#39;) {
-            // Close search
-            const searchToggle = document.querySelector(&#39;.search-toggle-button.active&#39;);
-            if (searchToggle) {
-                searchToggle.click();
-            }
-            
-            // Close mobile menu
-            const mobileNavOpen = document.querySelector(&#39;.mobile-nav:not([hidden])&#39;);
-            if (mobileNavOpen) {
-                document.querySelector(&#39;.hamburger-menu&#39;).click();
-            }
-        }
-    });
-
-    // ARIA live regions for dynamic content
-    function createLiveRegion() {
-        const liveRegion = document.createElement(&#39;div&#39;);
-        liveRegion.setAttribute(&#39;aria-live&#39;, &#39;polite&#39;);
-        liveRegion.setAttribute(&#39;aria-atomic&#39;, &#39;true&#39;);
-        liveRegion.className = &#39;sr-only&#39;;
-        document.body.appendChild(liveRegion);
-        return liveRegion;
-    }
-
-    const liveRegion = createLiveRegion();
-}
-
-function enhanceARIA() {
-    // Update search toggle ARIA states
-    const searchToggle = document.querySelector(&#39;.search-toggle-button&#39;);
-    if (searchToggle) {
-        searchToggle.addEventListener(&#39;click&#39;, function() {
-            const isExpanded = this.classList.contains(&#39;active&#39;);
-            this.setAttribute(&#39;aria-expanded&#39;, isExpanded.toString());
-        });
-    }
-
-    // Update hamburger menu ARIA states
-    const hamburger = document.querySelector(&#39;.hamburger-menu&#39;);
-    if (hamburger) {
-        hamburger.addEventListener(&#39;click&#39;, function() {
-            const isExpanded = document.querySelector(&#39;.main-header&#39;).classList.contains(&#39;active&#39;);
-            this.setAttribute(&#39;aria-expanded&#39;, isExpanded.toString());
-        });
-    }
-
-    // Add ARIA labels to post items
-    const postItems = document.querySelectorAll(&#39;.post-grid&#39;);
-    postItems.forEach((item, index) =&gt; {
-        const title = item.querySelector(&#39;.post-title a&#39;);
-        if (title) {
-            item.setAttribute(&#39;aria-label&#39;, `Postingan: ${title.textContent}`);
-            item.setAttribute(&#39;role&#39;, &#39;article&#39;);
-        }
-    });
-
-// ===== LOADING STATES MANAGEMENT =====
-function showLoading(message = &#39;Memuat...&#39;) {
-    const overlay = document.createElement(&#39;div&#39;);
-    overlay.className = &#39;loading-overlay active&#39;;
-    overlay.innerHTML = `
-        <div style='text-align: center;'>
-            <div class='loading-spinner'/>
-            <div class='loading-text'>${message}</div>
-        </div>
-    `;
-    document.body.appendChild(overlay);
-    return overlay;
-}
-
-function hideLoading(overlay) {
-    if (overlay) {
-        overlay.remove();
-    }
-}
-
-function enhanceSearchForms() {
-    const searchForms = document.querySelectorAll(&#39;.search-form&#39;);
-    
-    searchForms.forEach(form =&gt; {
-        form.addEventListener(&#39;submit&#39;, function(e) {
-            const input = this.querySelector(&#39;input[name=&quot;q&quot;]&#39;);
-            if (input.value.trim()) {
-                const loading = showLoading(&#39;Mencari...&#39;);
-            }
-        });
-    });
-}
-
-// ===== ENHANCED SEARCH FEATURES =====
-function initSearchSuggestions() {
-    const searchInputs = document.querySelectorAll(&#39;input[name=&quot;q&quot;]&#39;);
-    
-    searchInputs.forEach(input =&gt; {
-        let timeout;
-        
-        input.addEventListener(&#39;input&#39;, function() {
-            clearTimeout(timeout);
-            timeout = setTimeout(() =&gt; {
-                if (this.value.length &gt; 2) {
-                    console.log(&#39;Search suggestion for:&#39;, this.value);
-                }
-            }, 500);
-        });
-    });
-}
-
-// ===== MAIN INITIALIZATION =====
-document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-    // ===== EXISTING CODE =====
-    const searchToggle = document.querySelector(&#39;.search-toggle-button&#39;);
-    const header = document.querySelector(&#39;.main-header&#39;);
-    const hamburger = document.querySelector(&#39;.hamburger-menu&#39;);
-    const mobileNav = document.querySelector(&#39;.mobile-nav&#39;);
-    
-    // Toggle Search Bar Desktop
-    if (searchToggle) {
-        searchToggle.addEventListener(&#39;click&#39;, (e) =&gt; {
-            e.stopPropagation();
-            searchToggle.classList.toggle(&#39;active&#39;);
-        });
-    }
-    
-    // Close search when clicking outside
-    document.addEventListener(&#39;click&#39;, (e) =&gt; {
-        if (searchToggle &amp;&amp; searchToggle.classList.contains(&#39;active&#39;)) {
-            if (!e.target.closest(&#39;.search-input-wrapper&#39;) &amp;&amp; 
-                !e.target.closest(&#39;.search-toggle-button&#39;)) {
-                searchToggle.classList.remove(&#39;active&#39;);
-            }
-        }
-    });
-    
-    // Mobile Menu Toggle
-    if (hamburger) {
-        hamburger.addEventListener(&#39;click&#39;, () =&gt; {
-            header.classList.toggle(&#39;active&#39;);
-            mobileNav.style.display = header.classList.contains(&#39;active&#39;) ? &#39;block&#39; : &#39;none&#39;;
-            
-            // Animate hamburger icon
-            const spans = hamburger.querySelectorAll(&#39;span&#39;);
-            if (header.classList.contains(&#39;active&#39;)) {
-                spans[0].style.transform = &#39;rotate(45deg) translate(5px, 5px)&#39;;
-                spans[1].style.opacity = &#39;0&#39;;
-                spans[2].style.transform = &#39;rotate(-45deg) translate(7px, -6px)&#39;;
-            } else {
-                spans[0].style.transform = &#39;none&#39;;
-                spans[1].style.opacity = &#39;1&#39;;
-                spans[2].style.transform = &#39;none&#39;;
-            }
-        });
-    }
-    
-    // Close mobile menu when clicking on link
-    const mobileLinks = document.querySelectorAll(&#39;.mobile-nav a&#39;);
-    mobileLinks.forEach(link =&gt; {
-        link.addEventListener(&#39;click&#39;, () =&gt; {
-            header.classList.remove(&#39;active&#39;);
-            mobileNav.style.display = &#39;none&#39;;
-            
-            // Reset hamburger icon
-            const spans = hamburger.querySelectorAll(&#39;span&#39;);
-            spans[0].style.transform = &#39;none&#39;;
-            spans[1].style.opacity = &#39;1&#39;;
-            spans[2].style.transform = &#39;none&#39;;
-        });
-    });
-    
-    // Search functionality enhancement
-    const searchForms = document.querySelectorAll(&#39;form[action=&quot;/search&quot;]&#39;);
-    searchForms.forEach(form =&gt; {
-        const input = form.querySelector(&#39;input[name=&quot;q&quot;]&#39;);
-        
-        // Focus management
-        input.addEventListener(&#39;focus&#39;, function() {
-            this.parentElement.parentElement.classList.add(&#39;focused&#39;);
-        });
-        
-        input.addEventListener(&#39;blur&#39;, function() {
-            this.parentElement.parentElement.classList.remove(&#39;focused&#39;);
-        });
-        
-        // Prevent empty search
-        form.addEventListener(&#39;submit&#39;, function(e) {
-            if (!input.value.trim()) {
-                e.preventDefault();
-                input.focus();
-                input.placeholder = &#39;Masukkan kata kunci...&#39;;
-                setTimeout(() =&gt; {
-                    input.placeholder = &#39;Cari artikel...&#39;;
-                }, 2000);
-            }
-        });
-    });
-    
-    // Keyboard shortcuts
-    document.addEventListener(&#39;keydown&#39;, function(e) {
-        // Ctrl+K or / for search focus
-        if ((e.ctrlKey &amp;&amp; e.key === &#39;k&#39;) || e.key === &#39;/&#39;) {
-            e.preventDefault();
-            const searchInput = document.querySelector(&#39;.search-input-wrapper input&#39;) || 
-                              document.querySelector(&#39;.mobile-search input&#39;);
-            if (searchInput) {
-                searchInput.focus();
-                if (searchToggle) {
-                    searchToggle.classList.add(&#39;active&#39;);
-                }
-            }
-        }
-        
-        // Escape to close search
-        if (e.key === &#39;Escape&#39;) {
-            if (searchToggle &amp;&amp; searchToggle.classList.contains(&#39;active&#39;)) {
-                searchToggle.classList.remove(&#39;active&#39;);
-            }
-        }
-    });
-    
-    // ===== NEW ACCESSIBILITY FEATURES =====
-    initKeyboardNavigation();
-    enhanceARIA();
-    enhanceSearchForms();
-    initSearchSuggestions();
-    
-    // Set main content landmark
-    const mainContent = document.querySelector(&#39;.main-wrapper&#39;);
-    if (mainContent) {
-        mainContent.setAttribute(&#39;role&#39;, &#39;main&#39;);
-        mainContent.id = &#39;main-content&#39;;
-    }
-    
-    // Set complementary landmark for sidebar
-    const sidebar = document.querySelector(&#39;#sidebar-wrapper&#39;);
-    if (sidebar) {
-        sidebar.setAttribute(&#39;role&#39;, &#39;complementary&#39;);
-        sidebar.setAttribute(&#39;aria-label&#39;, &#39;Sidebar dengan widget tambahan&#39;);
-    }
-    
-    // Set contentinfo landmark for footer
-    const footer = document.querySelector(&#39;.main-footer&#39;);
-    if (footer) {
-        footer.setAttribute(&#39;role&#39;, &#39;contentinfo&#39;);
-    }
-});
-
-// ===== ERROR BOUNDARY HANDLING =====
-window.addEventListener(&#39;error&#39;, function(e) {
-    console.error(&#39;Global error caught:&#39;, e.error);
-    const errorBoundary = document.getElementById(&#39;error-boundary&#39;);
-    if (errorBoundary) errorBoundary.style.display = &#39;block&#39;;
-});
-
-window.addEventListener(&#39;unhandledrejection&#39;, function(e) {
-    console.error(&#39;Unhandled promise rejection:&#39;, e.reason);
-    const errorBoundary = document.getElementById(&#39;error-boundary&#39;);
-    if (errorBoundary) errorBoundary.style.display = &#39;block&#39;;
-});
-
-function checkNetworkStatus() {
-    if (!navigator.onLine) {
-        const errorBoundary = document.getElementById(&#39;error-boundary&#39;);
-        if (errorBoundary) {
-            errorBoundary.style.display = &#39;block&#39;;
-            const errorContent = errorBoundary.querySelector(&#39;.error-content h3&#39;);
-            const errorText = errorBoundary.querySelector(&#39;.error-content p&#39;);
-            if (errorContent) errorContent.textContent = &#39;Koneksi Terputus&#39;;
-            if (errorText) errorText.textContent = &#39;Periksa koneksi internet Anda dan coba lagi.&#39;;
+    } else {
+        // Fallback
+        for (var i = 0; i < images.length; i++) {
+            images[i].src = images[i].getAttribute('data-src');
+            images[i].classList.remove('lazy');
         }
     }
 }
 
-window.addEventListener(&#39;online&#39;, function() {
-    const errorBoundary = document.getElementById(&#39;error-boundary&#39;);
-    if (errorBoundary) errorBoundary.style.display = &#39;none&#39;;
-});
-
-window.addEventListener(&#39;offline&#39;, checkNetworkStatus);
-checkNetworkStatus();
-</script>
-  <!-- Advanced Search Features -->
-<script>
-function initSearchSuggestions() {
-    const searchInputs = document.querySelectorAll(&#39;input[name=&quot;q&quot;]&#39;);
-    
-    searchInputs.forEach(input =&gt; {
-        let timeout;
-        
-        input.addEventListener(&#39;input&#39;, function() {
-            clearTimeout(timeout);
-            timeout = setTimeout(() =&gt; {
-                if (this.value.length &gt; 2) {
-                    // Here you can implement AJAX search suggestions
-                    console.log(&#39;Search suggestion for:&#39;, this.value);
-                }
-            }, 500);
-        });
-    });
-}
-
-// Initialize when ready
-if (document.readyState === &#39;loading&#39;) {
-    document.addEventListener(&#39;DOMContentLoaded&#39;, initSearchSuggestions);
-} else {
-    initSearchSuggestions();
-}
-</script>
-<script>
-document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-  const images = document.querySelectorAll(&#39;img[data-src]&#39;);
-  if (&#39;IntersectionObserver&#39; in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) =&gt; {
-      entries.forEach(entry =&gt; {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove(&#39;lazy&#39;);
-          observer.unobserve(img);
-        }
-      });
-    });
-
-    images.forEach(img =&gt; imageObserver.observe(img));
-  } else {
-    // Fallback: load all images
-    images.forEach(img =&gt; { img.src = img.dataset.src; img.classList.remove(&#39;lazy&#39;); });
-  }
-});
-</script>
-
-
-  <!-- Error Boundary & Fallback UI -->
-<div id='error-boundary' style='display: none;'>
-    <div class='error-overlay'>
-        <div class='error-content'>
-            <i class='fas fa-exclamation-triangle' style='font-size: 48px; color: #dc3545; margin-bottom: 20px;'/>
-            <h3>Terjadi Kesalahan</h3>
-            <p>Maaf, terjadi masalah teknis. Silakan refresh halaman atau coba lagi nanti.</p>
-            <button class='error-retry-btn' onclick='location.reload()'>Refresh Halaman</button>
-            <button class='error-back-btn' onclick='history.back()'>Kembali</button>
-        </div>
-    </div>
-</div>
-
-<style>
-.error-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.95);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    padding: 20px;
-}
-
-.error-content {
-    text-align: center;
-    max-width: 400px;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 1px solid #e9ecef;
-}
-
-.error-retry-btn, .error-back-btn {
-    padding: 12px 24px;
-    margin: 5px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.error-retry-btn {
-    background: #007bff;
-    color: white;
-}
-
-.error-retry-btn:hover {
-    background: #0056b3;
-}
-
-.error-back-btn {
-    background: #6c757d;
-    color: white;
-}
-
-.error-back-btn:hover {
-    background: #545b62;
-}
-</style>
-
-<script>
-// Error Boundary JavaScript
-window.addEventListener(&#39;error&#39;, function(e) {
-    console.error(&#39;Global error caught:&#39;, e.error);
-    document.getElementById(&#39;error-boundary&#39;).style.display = &#39;block&#39;;
-});
-
-window.addEventListener(&#39;unhandledrejection&#39;, function(e) {
-    console.error(&#39;Unhandled promise rejection:&#39;, e.reason);
-    document.getElementById(&#39;error-boundary&#39;).style.display = &#39;block&#39;;
-});
-
-// Network error handling
-function checkNetworkStatus() {
-    if (!navigator.onLine) {
-        document.getElementById(&#39;error-boundary&#39;).style.display = &#39;block&#39;;
-        document.querySelector(&#39;.error-content h3&#39;).textContent = &#39;Koneksi Terputus&#39;;
-        document.querySelector(&#39;.error-content p&#39;).textContent = &#39;Periksa koneksi internet Anda dan coba lagi.&#39;;
-    }
-}
-
-window.addEventListener(&#39;online&#39;, function() {
-    document.getElementById(&#39;error-boundary&#39;).style.display = &#39;none&#39;;
-});
-
-window.addEventListener(&#39;offline&#39;, checkNetworkStatus);
-
-// Initialize network check
-checkNetworkStatus();
+// Initialize lazy loading
+document.addEventListener('DOMContentLoaded', initLazyLoading);
+//]]>
 </script>
   <script>
-    // Loading States Management
-function showLoading(message = &#39;Memuat...&#39;) {
-    const overlay = document.createElement(&#39;div&#39;);
-    overlay.className = &#39;loading-overlay active&#39;;
-    overlay.innerHTML = `
-        <div style='text-align: center;'>
-            <div class='loading-spinner'/>
-            <div class='loading-text'>${message}</div>
-        </div>
-    `;
-    document.body.appendChild(overlay);
-    return overlay;
-}
-
-function hideLoading(overlay) {
-    if (overlay) {
-        overlay.remove();
-    }
-}
-
-// Enhanced search with loading
-function enhanceSearchForms() {
-    const searchForms = document.querySelectorAll(&#39;.search-form&#39;);
-    
-    searchForms.forEach(form =&gt; {
-        form.addEventListener(&#39;submit&#39;, function(e) {
-            const input = this.querySelector(&#39;input[name=&quot;q&quot;]&#39;);
-            if (input.value.trim()) {
-                const loading = showLoading(&#39;Mencari...&#39;);
-                // Loading akan hilang saat halaman baru dimuat
-            }
-        });
-    });
-}
-
-// Initialize semua enhancements
-document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-    enhanceSearchForms();
-    // Error boundary sudah otomatis aktif
-});
-  </script>
-  
-<script>
-
-function initLazyLoading() {
-  const lazyImages = [].slice.call(document.querySelectorAll(&#39;img.lazy&#39;));
-  
-  if (&#39;IntersectionObserver&#39; in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.classList.remove(&#39;lazy&#39;);
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
-  }
-}
-
-function enhanceSearch() {
-  const searchForms = document.querySelectorAll(&#39;.search-form&#39;);
-  
-  searchForms.forEach(form =&gt; {
-    const input = form.querySelector(&#39;input[name=&quot;q&quot;]&#39;);
-    
-    // Debounced search suggestions
-    let timeout;
-    input.addEventListener(&#39;input&#39;, function() {
-      clearTimeout(timeout);
-      timeout = setTimeout(() =&gt; {
-        if (this.value.length &gt; 2) {
-          // Asumsi fetchSearchSuggestions didefinisikan di tempat lain
-          // fetchSearchSuggestions(this.value); 
-        }
-      }, 300);
-    });
-    
-    // Enter to submit
-    input.addEventListener(&#39;keypress&#39;, function(e) {
-      if (e.key === &#39;Enter&#39; &amp;&amp; this.value.trim()) {
-        form.submit();
-      }
-    });
-  });
-}
-
-function initErrorHandling() {
-  window.addEventListener(&#39;error&#39;, (e) =&gt; {
-    console.error(&#39;Error:&#39;, e.error);
-    showErrorNotification(&#39;Terjadi kesalahan. Silakan refresh halaman.&#39;);
-  });
-  
-  window.addEventListener(&#39;unhandledrejection&#39;, (e) =&gt; {
-    console.error(&#39;Promise rejection:&#39;, e.reason);
-    showErrorNotification(&#39;Terjadi masalah. Silakan coba lagi.&#39;);
-  });
-}
-
-function showErrorNotification(message) {
-  const notification = document.createElement(&#39;div&#39;);
-  notification.className = &#39;error-notification&#39;;
-  notification.textContent = message;
-  document.body.appendChild(notification);
-  
-  setTimeout(() =&gt; notification.remove(), 5000);
-}
-
-
-// =======================================================
-// INICIALISASI (DOM READY)
-// =======================================================
-
-document.addEventListener(&quot;DOMContentLoaded&quot;, function () {
-  
-  // 1. Mobile Navigation Toggle
-  const hamburger = document.querySelector(&quot;.hamburger-menu&quot;);
-  const mobileNav = document.createElement(&quot;div&quot;);
-  
-  if (hamburger) { // Cek apakah hamburger ada
-      // Buat menu mobile dari nav utama
-      mobileNav.classList.add(&quot;mobile-nav&quot;);
-      
-      // Pastikan .main-nav ul ada
-      const mainNav = document.querySelector(&quot;.main-nav ul&quot;);
-      if (mainNav) { 
-          const navLinks = mainNav.cloneNode(true);
-          mobileNav.appendChild(navLinks);
-          
-          const mainHeader = document.querySelector(&quot;.main-header&quot;);
-          if (mainHeader) {
-              mainHeader.appendChild(mobileNav);
-          }
-      }
-
-      // Toggle klik
-      hamburger.addEventListener(&quot;click&quot;, function () {
-          mobileNav.classList.toggle(&quot;show&quot;);
-          hamburger.classList.toggle(&quot;active&quot;);
-      });
-  }
-  
-  // 2. Panggil Fungsi Inisialisasi
-  initLazyLoading();
-  enhanceSearch();
-  initErrorHandling();
-
-});
-</script>
-
-<script>
-document.addEventListener(&#39;DOMContentLoaded&#39;, function(){
-  const toggleBtn = document.getElementById(&#39;menu-toggle&#39;);
-  const mainNav = document.querySelector(&#39;.main-nav&#39;);
-  if(toggleBtn &amp;&amp; mainNav){
-    toggleBtn.addEventListener(&#39;click&#39;, function(){
-      mainNav.classList.toggle(&#39;active&#39;);
-    });
-  }
-});
-</script>
-<script>
-//<![CDATA[ 
+//<![CDATA[
+// ===== DYNAMIC SNIPPET LENGTH =====
 function dynamicSnippetLength() {
-  // Tentukan panjang snippet berdasarkan lebar layar
-  let targetLength;
-  const screenWidth = window.innerWidth;
-  
-  if (screenWidth <= 360) {
-    targetLength = 50;
-  } else if (screenWidth <= 480) {
-    targetLength = 80;
-  } else {
-    targetLength = 200; 
-  }
-
-  // Cari semua elemen snippet di halaman
-  const snippets = document.querySelectorAll('.post-snippet');
-
-  snippets.forEach(snippet => {
-    let originalText = snippet.textContent.trim();
-    if (originalText.length > targetLength) {
-      let newSnippet = originalText.substring(0, targetLength) + '...';
-      snippet.textContent = newSnippet;
+    var targetLength;
+    var screenWidth = window.innerWidth;
+    
+    if (screenWidth <= 360) {
+        targetLength = 50;
+    } else if (screenWidth <= 480) {
+        targetLength = 80;
+    } else {
+        targetLength = 200;
     }
-  });
+
+    var snippets = document.querySelectorAll('.post-snippet');
+    for (var i = 0; i < snippets.length; i++) {
+        var snippet = snippets[i];
+        var originalText = snippet.textContent.trim();
+        if (originalText.length > targetLength) {
+            var newSnippet = originalText.substring(0, targetLength) + '...';
+            snippet.textContent = newSnippet;
+        }
+    }
 }
 
-// Panggil fungsi saat halaman dimuat
+// Initialize on load and resize
 document.addEventListener('DOMContentLoaded', dynamicSnippetLength);
-
-// Panggil fungsi juga saat ukuran jendela diubah
 window.addEventListener('resize', dynamicSnippetLength);
 //]]>
 </script>
+  <script>
+//<![CDATA[
+// ===== ERROR BOUNDARY HANDLING =====
+window.addEventListener('error', function(e) {
+    console.error('Global error caught:', e.error);
+    var errorBoundary = document.getElementById('error-boundary');
+    if (errorBoundary) errorBoundary.style.display = 'block';
+});
+
+window.addEventListener('unhandledrejection', function(e) {
+    console.error('Unhandled promise rejection:', e.reason);
+    var errorBoundary = document.getElementById('error-boundary');
+    if (errorBoundary) errorBoundary.style.display = 'block';
+});
+
+function checkNetworkStatus() {
+    if (!navigator.onLine) {
+        var errorBoundary = document.getElementById('error-boundary');
+        if (errorBoundary) {
+            errorBoundary.style.display = 'block';
+            var errorTitle = errorBoundary.querySelector('.error-content h3');
+            var errorText = errorBoundary.querySelector('.error-content p');
+            if (errorTitle) errorTitle.textContent = 'Koneksi Terputus';
+            if (errorText) errorText.textContent = 'Periksa koneksi internet Anda dan coba lagi.';
+        }
+    }
+}
+
+window.addEventListener('online', function() {
+    var errorBoundary = document.getElementById('error-boundary');
+    if (errorBoundary) errorBoundary.style.display = 'none';
+});
+
+window.addEventListener('offline', checkNetworkStatus);
+//]]>
+</script>
+  <!-- ======================================================= -->
 <script>
-document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-    const dropdownToggles = document.querySelectorAll(&#39;.dropdown-toggle&#39;);
+//<![CDATA[
+// ===== SIMPLE HAMBURGER MENU =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing hamburger menu...');
     
-    dropdownToggles.forEach(toggle =&gt; {
-        toggle.addEventListener(&#39;click&#39;, function(e) {
-            e.preventDefault(); // Mencegah link ke #
-            const parentLi = this.closest(&#39;.has-dropdown&#39;);
-            
-            // 1. Tutup semua dropdown lain yang terbuka
-            document.querySelectorAll(&#39;.has-dropdown.active&#39;).forEach(openLi =&gt; {
-                if (openLi !== parentLi) {
-                    openLi.classList.remove(&#39;active&#39;);
+    var hamburger = document.querySelector('.hamburger-menu');
+    var mobileNav = document.querySelector('.mobile-nav');
+    
+    // Create mobile nav if not exists
+    if (hamburger && !mobileNav) {
+        console.log('Creating mobile nav...');
+        var desktopNav = document.querySelector('.main-nav ul');
+        if (desktopNav) {
+            mobileNav = document.createElement('div');
+            mobileNav.className = 'mobile-nav';
+            var clonedNav = desktopNav.cloneNode(true);
+            mobileNav.appendChild(clonedNav);
+            document.querySelector('.main-header').appendChild(mobileNav);
+            console.log('Mobile nav created');
+        }
+    }
+    
+    // Simple hamburger toggle
+    if (hamburger && mobileNav) {
+        console.log('Setting up hamburger click...');
+        
+        hamburger.addEventListener('click', function(e) {
+            console.log('Hamburger clicked - toggling menu');
+            e.stopPropagation();
+            mobileNav.classList.toggle('show');
+            this.classList.toggle('active');
+        });
+        
+        // Close menu when clicking regular links (not dropdowns)
+        var regularLinks = mobileNav.querySelectorAll('a:not(.dropbtn)');
+        for (var i = 0; i < regularLinks.length; i++) {
+            regularLinks[i].addEventListener('click', function() {
+                console.log('Regular link clicked - closing menu');
+                if (!this.classList.contains('dropbtn')) {
+                    mobileNav.classList.remove('show');
+                    hamburger.classList.remove('active');
                 }
             });
-            
-            // 2. Toggle (Buka/Tutup) dropdown ini
-            parentLi.classList.toggle(&#39;active&#39;);
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mobileNav.classList.contains('show') &&
+                !e.target.closest('.mobile-nav') && 
+                !e.target.closest('.hamburger-menu')) {
+                console.log('Clicked outside - closing menu');
+                mobileNav.classList.remove('show');
+                hamburger.classList.remove('active');
+            }
         });
-    });
-
-    // 3. Menyembunyikan dropdown saat mengklik di luar area navigasi
-    document.addEventListener(&#39;click&#39;, function(e) {
-        if (!e.target.closest(&#39;.has-dropdown&#39;)) {
-            document.querySelectorAll(&#39;.has-dropdown.active&#39;).forEach(li =&gt; {
-                li.classList.remove(&#39;active&#39;);
+        
+        console.log('Hamburger menu setup complete');
+    } else {
+        console.log('Hamburger or mobile nav not found');
+    }
+});
+//]]>
+</script>
+  <script>
+//<![CDATA[
+// ===== DROPDOWN MENU =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing dropdown menus...');
+    
+    // Wait a bit to ensure mobile nav is created
+    setTimeout(function() {
+        var dropdownToggles = document.querySelectorAll('.dropbtn');
+        console.log('Dropdown toggles found:', dropdownToggles.length);
+        
+        for (var i = 0; i < dropdownToggles.length; i++) {
+            dropdownToggles[i].addEventListener('click', function(e) {
+                console.log('Dropdown clicked');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                var dropdown = this.closest('.dropdown, .has-dropdown');
+                if (dropdown) {
+                    var isActive = dropdown.classList.contains('active');
+                    
+                    // Close all other dropdowns
+                    var allDropdowns = document.querySelectorAll('.dropdown.active, .has-dropdown.active');
+                    for (var j = 0; j < allDropdowns.length; j++) {
+                        if (allDropdowns[j] !== dropdown) {
+                            allDropdowns[j].classList.remove('active');
+                        }
+                    }
+                    
+                    // Toggle current dropdown
+                    if (!isActive) {
+                        dropdown.classList.add('active');
+                    } else {
+                        dropdown.classList.remove('active');
+                    }
+                }
             });
         }
-    });
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown') && !e.target.closest('.has-dropdown')) {
+                var openDropdowns = document.querySelectorAll('.dropdown.active, .has-dropdown.active');
+                for (var i = 0; i < openDropdowns.length; i++) {
+                    openDropdowns[i].classList.remove('active');
+                }
+            }
+        });
+        
+    }, 100);
 });
+//]]>
 </script>
+  
 </body>
 </html>
