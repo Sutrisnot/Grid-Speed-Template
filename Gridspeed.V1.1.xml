@@ -100,8 +100,8 @@
 </b:if>
   <!-- Versi minimal (hanya 0.5 KB) -->
 <meta content='GridSpeed' name='template-name'/>
-<meta content='1.0' name='template-version'/>
-<meta content='YourName' name='template-author'/>
+<meta content='1.1' name='template-version'/>
+<meta content='inteknologi.com' name='template-author'/>
   <b:skin><![CDATA[
 
 html,body{height:100%;width:100%;font-family:Arial,Helvetica,sans-serif;line-height:1.5;background-color:#fff;color:#333;scroll-behavior:smooth}
@@ -899,9 +899,9 @@ h3.post-title.entry-title {
   </div>
 </div></b:if>
 <b:section class='ads-section' id='ads_below_header' name='Iklan di Bawah Header' showaddelement='yes'>
-  <b:widget id='HTML1' locked='false' title='Pasang Iklan  Disini' type='HTML'>
+  <b:widget id='HTML1' locked='false' title='' type='HTML'>
     <b:widget-settings>
-      <b:widget-setting name='content'/>
+      <b:widget-setting name='content'>Pasang Iklan  Ads Disini</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -2325,5 +2325,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
   //]]>
 </script>
+
 </body>
 </html>
