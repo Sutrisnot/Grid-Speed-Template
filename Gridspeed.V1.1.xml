@@ -447,7 +447,8 @@ aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.9rem;}}
 
 #menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}#menu-toggle.active span:nth-child(2){opacity:0!important;transform:translateX(100%)!important}#menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
 .mobile-nav.show{margin-top:-5px;}
-.mobile-nav a { text-align:center }}
+.mobile-nav a { text-align:center }
+#footer-ads .widget-content {margin: 15px 10px;padding: 12px;}}
 
 @media (max-width:576px){
 .content-wrapper{grid-template-columns:1fr;gap:1.5rem}.sidebar{margin-top:20px}.post-grid{grid-template-columns:100px 1fr;gap:15px}.post-thumbnail-side img{width:100px;height:75px}.post-meta{grid-column:1 / -1}.footer-top{flex-direction:column;align-items:center;text-align:center}.footer-right{margin-top:10px}.social-icons a{margin:0 10px}.popular-posts .item-thumbnail{width:70px;height:55px}.popular-posts .item-title{font-size:.9rem}.popular-posts .item-snippet{-webkit-line-clamp:1}
@@ -525,15 +526,9 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.7rem;}.fea
 .featured-below-section p {font-size: 0.8rem;}
 .mobile-nav.show{margin-top: 43px;}}
 
-pre {max-height: 40vh;overflow-y: auto;overflow-x: auto; max-width: 100%;white-space: pre-wrap;word-wrap: break-word;background: transparent;color: inherit;padding: 15px;border: 1px solid #e1e1e1;border-radius: 5px; overflow-x: auto;background: #f4f4f4;}
-code {background: #fff;padding: 2px 5px;border-radius: 3px;}
-pre code {display: block;white-space: pre-wrap;word-break: break-all;max-width: 100%;white-space: inherit !important;}
-
-.post-body table, 
-.post-body img,
-.post-body iframe { max-width: 100% !important; height: auto !important; }
-pre, code {white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap; white-space: -o-pre-wrap;word-wrap: break-word; overflow-wrap: break-word;}
-pre {
+pre {max-width: 100%;max-height: 40vh;overflow-y: auto;overflow-x: auto;white-space: pre-wrap;word-wrap: break-word;padding: 15px;background:#f3f7f9;color: #d4d4d4;border: 2px solid #191970;padding-left:20px;border-radius:5px;}
+pre, code {font-family: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;font-size: 15px;line-height: 1.5;}
+code {background:#f3f7f9;padding: 2px 6px;border-radius: 3px;color: #343434;border:1px solid color; }
 
 #backToTopBtn{display:none;position:fixed;bottom:50px;right:20px;z-index:99;border:none;outline:none;background-color:#04AA6D;color:white;cursor:pointer;padding:12px 15px;border-radius:50%;font-size:18px;opacity:.8;transition:opacity .3s,transform .3s;box-shadow:0 2px 5px rgba(0,0,0,.3)}
 #backToTopBtn:hover{opacity:1;background-color:#038d59}
@@ -546,6 +541,22 @@ pre {
 
 .table-responsive tbody tr:nth-child(even) {background-color: #f8f9fa; }
 .table-responsive tbody tr:hover {background-color: #e2e6ea; }
+
+.ads-in-article {margin: 25px auto;text-align: center;}
+.ads-in-article iframe, .ads-in-article ins { max-width: 100%;}
+#footer-ads .widget-content { margin: 20px auto;max-width: 970px;padding: 15px;background: #ffffff; border-radius: 8px;border: 1px solid #e9ecef; text-align: center;}
+.ads-section {display: block; width: 100%; max-width: 1200px; margin: 0 auto;padding: 10px 0;text-align: center;box-sizing: border-box;}
+
+.header-container,.content-wrapper,.main-content {max-width: 1200px;margin: 0 auto;}
+.ads-section iframe,.ads-section ins {max-width: 100%;height: auto;display: inline-block;}
+.ads-in-article {margin: 25px auto;text-align: center;max-width: 100%;}
+.ads-in-article ins,.ads-in-article iframe {max-width: 100%;height: auto;display: inline-block;}
+
+.ads-in-article, .ads-inserted {margin: 25px auto;text-align: center;max-width: 100%;}
+.ads-in-article ins,
+.ads-in-article iframe,
+.ads-inserted ins,
+.ads-inserted iframe {max-width: 100%;height: auto;display: inline-block;}
 
  ]]></b:skin>
   
@@ -839,7 +850,7 @@ h3.post-title.entry-title {
             <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
             <b:widget-setting name='showThumbnails'>true</b:widget-setting>
             <b:widget-setting name='showSnippets'>true</b:widget-setting>
-            <b:widget-setting name='timeRange'>LAST_MONTH</b:widget-setting>
+            <b:widget-setting name='timeRange'>LAST_WEEK</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
@@ -887,7 +898,26 @@ h3.post-title.entry-title {
 
   </div>
 </div></b:if>
+<b:section class='ads-section' id='ads_below_header' name='Iklan di Bawah Header' showaddelement='yes'>
+  <b:widget id='HTML1' locked='false' title='Pasang Iklan  Disini' type='HTML'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
 
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+</b:section>
+<b:section class='ads-in-article' id='ads_in_article_1' name='Iklan Dalam Artikel 1' showaddelement='yes'/>
+<b:section class='ads-in-article' id='ads_in_article_2' name='Iklan Dalam Artikel 2' showaddelement='yes'/>
   <!-- MAIN CONTENT -->
  <main class='main-wrapper' role='main'>
   <div class='content-wrapper'>
@@ -944,7 +974,6 @@ h3.post-title.entry-title {
           <b:include data='post' name='post'/>
           <b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
         </div>
-
         <!-- Ad -->
         <b:if cond='data:post.includeAd'>
           <div class='inline-ad'>
@@ -1962,7 +1991,7 @@ h3.post-title.entry-title {
     <!-- Kolom Kanan: Sosial Media -->
     <div class='footer-right'>
       <div class='social-icons' itemprop='publisher' itemscope='itemscope' itemtype='https://schema.org/Organization'>
-        <meta content='Raja Review' itemprop='name'/>
+        <meta content='Inteknologi' itemprop='name'/>
         <a aria-label='Facebook' href='https://facebook.com/yourpage' itemprop='sameAs' rel='noopener' target='_blank'>
           <svg viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d='M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l98.2 0 0-145.8-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 145.8 129 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32z'/></svg>
         </a>
@@ -1981,10 +2010,10 @@ h3.post-title.entry-title {
       </div>
     </div>
   </div>
-
+ <b:section class='ad-section' id='footer-ads' preferred='yes' showaddelement='yes'/>
   <!-- Baris Atribusi Bawah -->
   <div class='footer-bottom'>
-    <p>Copyright&#169; 2025 | Template by <a href='https://www.rajareview.site/' itemprop='creator' rel='noopener' target='_blank'><data:blog.title/></a>
+    <p>Copyright&#169; 2025 | Template by <a href='https://www.inteknologi.com/' itemprop='creator' rel='noopener' target='_blank'><data:blog.title/></a>
     </p>
   </div>
   </div>
@@ -2259,6 +2288,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 //]]>
 </script>
-  
+<script>
+  <![CDATA[
+document.addEventListener("DOMContentLoaded", function() {
+  // Jalankan hanya di halaman posting
+  if (!document.body.classList.contains('item-view')) return;
+
+  const article = document.querySelector('.post-body, .entry-content');
+  if (!article) return;
+
+  // Ambil konten iklan dari widget section
+  const ad1 = document.querySelector('#ads_in_article_1 .widget-content');
+  const ad2 = document.querySelector('#ads_in_article_2 .widget-content');
+
+  // Ambil semua paragraf artikel
+  const paragraphs = article.querySelectorAll('p');
+  if (paragraphs.length === 0) return;
+
+  // Tentukan posisi sisipan
+  const middleIndex = Math.floor(paragraphs.length / 2);
+  const lastIndex = paragraphs.length - 1;
+
+  // Sisipkan iklan pertama di tengah artikel
+  if (ad1 && paragraphs[middleIndex]) {
+    const clone1 = ad1.cloneNode(true);
+    clone1.classList.add('ads-inserted');
+    paragraphs[middleIndex].insertAdjacentElement('afterend', clone1);
+  }
+
+  // Sisipkan iklan kedua di akhir artikel
+  if (ad2 && paragraphs[lastIndex]) {
+    const clone2 = ad2.cloneNode(true);
+    clone2.classList.add('ads-inserted');
+    paragraphs[lastIndex].insertAdjacentElement('afterend', clone2);
+  }
+});
+  //]]>
+</script>
 </body>
 </html>
