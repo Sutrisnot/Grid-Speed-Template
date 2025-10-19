@@ -337,11 +337,11 @@ a.button {text-decoration: none !important; border: none;padding: 14px 25px;text
 .button2:hover {background-color: #008CBA;color: white;}
 
 .post-body .entry-content{width:100%;max-width:100%}
-.post-body img{max-width:100%;height:auto;margin:15px 0}
+.post-body img{max-width:100%;height:auto;margin:15px 0;}
 .post-body ul{list-style:none;padding-left:0;margin:15px 0}
-.post-body ul li{margin-bottom:10px;display:flex;align-items:flex-start}
-.post-body ul li::before{content:"\25AA";font-size:1.5em;color:#333;font-weight:bold;display:inline-block;width:2em;min-width:1.2em;margin-right:2px;margin-top:-5px}
-.post-body ol{padding-left:25px;margin:15px 0;list-style-type:decimal}
+.post-body ul li{margin-bottom:10px;display:flex;align-items:flex-start;margin-left:2px;}
+.post-body ul li::before{content:"\25AA";font-size:1.4em;color:#333;font-weight:bold;display:inline-block;width:0.8em;min-width:0.8em;margin-right:5px;margin-top:-5px}
+.post-body ol{padding-left:20px;margin:15px 0;list-style-type:decimal}
 .post-body ol li{margin-bottom:10px;font-weight:bold;color:#333}
 .post-body ol li p,.post-body ol li span,.post-body ol li div{font-weight:normal;color:inherit}
 .post-body blockquote{margin:20px 0;padding:15px 20px 15px 25px;background-color:#f7f7f7;border-left:3px solid #007bff;font-style:italic;color:#555;line-height:1.6;position:relative}
@@ -446,7 +446,7 @@ aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.9rem;}}
 #menu-toggle span{background-color:#ffffff!important;display:block!important;height:2px!important;width:25px!important;margin:5px 0!important;transition:all .3s ease-in-out!important}#menu-toggle span:nth-child(2){width:15px!important;margin:5px!important;margin-left:-4!important;margin-right:auto!important}
 
 #menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}#menu-toggle.active span:nth-child(2){opacity:0!important;transform:translateX(100%)!important}#menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
-.mobile-nav.show{margin-top:-5px;}
+.mobile-nav.show{margin-top:10px;}
 .mobile-nav a { text-align:center }
 #footer-ads .widget-content {margin: 15px 10px;padding: 12px;}}
 
@@ -456,7 +456,7 @@ aside#sidebar-below-header #PopularPosts2 .item-thumbnail {width: 75px;height: 6
 aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.9rem;}
 aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.78rem;}
 .mobile-nav.show{margin-top: 5px;}
-.mobile-nav a { text-align:center }}
+.mobile-nav a { text-align:center }   #footer-iklan-slot {padding: 10px 0;}}
 
 @media (max-width:480px){
   .header-container,.header-content{display:flex!important;justify-content:space-between!important;align-items:center!important;width:100%!important;padding:8px 15px!important;box-sizing:border-box!important;}
@@ -487,7 +487,7 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.78rem;}
   .sidebar-below-header {flex: 1 1 100% !important;max-width: 100% !important;margin-top: 0 !important;}
 
   /* --- Featured Post Detail (F/S) --- */
-  .featured-below-section .post-summary h2 a {display:none;font-size: 1.2rem;bottom: 12px;width: 92%;}
+  .featured-below-section .post-summary h2 a {font-size: 1.2rem;bottom: 12px;width: 92%;}
   .featured-below-section p {font-size: 0.85rem;}
 
 
@@ -557,6 +557,18 @@ code {background:#f3f7f9;padding: 2px 6px;border-radius: 3px;color: #343434;bord
 .ads-in-article iframe,
 .ads-inserted ins,
 .ads-inserted iframe {max-width: 100%;height: auto;display: inline-block;}
+
+#footer-iklan-slot {width: 100%;background: #333;color#ffff;border:1px solid gray; padding: 20px 0;text-align: center;  display: block; margin: 0 auto; }
+#ads_below_header { border:1px solid gray ;width: 100%}
+
+/* === ARTIKEL TERKAIT TANPA GAMBAR === */
+.Gridspeed {--warna-utama: #0d47a1;--warna-hover: #ff6f00;background: #fff;border-radius: 8px;box-shadow: 0 4px 12px rgba(0,0,0,0.08);padding: 10px;margin: 20px 0;font-family: "Inter", "Roboto", Arial, sans-serif;}
+.Gridspeed .judul {display: block;text-align: center;font-size: 17px;font-weight: 700;margin-bottom: 12px;color: var(--warna-utama);text-transform: uppercase;letter-spacing: 0.5px;}
+.Gridspeed ul {list-style: none;margin: 0;padding: 0;display: flex;flex-direction: column;gap:5px;}
+.Gridspeed li {background: #f9f9f9;border-radius: 6px;transition: all 0.3s ease;}
+.Gridspeed li:hover {background: #fff5eb;border-left-color: var(--warna-hover);transform: translateX(3px);}
+.Gridspeed li a {display: block;padding: 8px 10px;color: #333;font-weight: 400;text-decoration: none;transition: color 0.3s ease;}
+.Gridspeed li a:hover {color: var(--primary-color);}
 
  ]]></b:skin>
   
@@ -749,22 +761,21 @@ h3.post-title.entry-title {
 <nav class='main-nav'>
   <ul>
     <li><a href='https://www.inteknologi.com/'>Home</a></li>
-    <li><a href='/search/label/blogging'>Blog-ging</a></li>
+    <li><a href='/p/html-parse-codes.html'>HTML Pharse</a></li>
     <li><a href='/search/label/Template'>Template</a></li>    
-    <li><a href='/search/label/teknologi'>Teknologi</a></li>
-    <li><a href='/search/label/komputer'>Media-Sosial</a></li>
      <li class='has-dropdown'> 
       <div class='dropdown'>
         <a class='dropbtn' href='#'>
-          Dropdown Menu <span class='dropdown-icon'>
+          Tips dan Tutorial <span class='dropdown-icon'>
             <svg viewBox='0 0 320 512' xmlns='http://www.w3.org/2000/svg'><path d='M140.3 376.8c12.6 10.2 31.1 9.5 42.8-2.2l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301.4 192 288.5 192l-256 0c-12.9 0-24.6 7.8-29.6 19.8S.7 237.5 9.9 246.6l128 128 2.4 2.2z'/></svg>
           </span>
         </a>
         
         <div class='dropdown-content'>
-          <a href='#'>Link 1</a>
-          <a href='#'>Link 2</a>
-          <a href='#'>Link 3</a>
+          <a href='/search/label/blogging'>Blogging</a>
+          <a href='/search/label/teknologi'>Teknologi</a>
+          <a href='/search/label/komputer'>Komputer</a>
+          <a href='/search/label/Media%20sosial'>Media Sosial</a>
         </div>
       </div>
     </li>
@@ -806,7 +817,7 @@ h3.post-title.entry-title {
           <b:widget-settings>
             <b:widget-setting name='showSnippet'>true</b:widget-setting>
             <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-            <b:widget-setting name='postId'>2444488814314309454</b:widget-setting>
+            <b:widget-setting name='postId'>4138765121191012805</b:widget-setting>
             <b:widget-setting name='showFirstImage'>true</b:widget-setting>
             <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
           </b:widget-settings>
@@ -1639,7 +1650,25 @@ h3.post-title.entry-title {
             </b:if>
           </span>
         </div>
-        
+        <b:if cond='data:view.isPost'>
+  <script> //<![CDATA[
+    var jumlah = 4;
+    eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('c a=["\\e\\d\\s\\Q\\f\\C","\\d\\s\\f\\h\\W","\\B\\d\\d\\I","\\V\\f","\\f\\k\\f\\e\\d","\\e\\k\\s\\S","\\h\\d\\e","\\r\\e\\f\\d\\h\\s\\r\\f\\d","\\C\\h\\d\\B","\\h\\r\\s\\I\\F\\U","\\B\\e\\F\\F\\h","\\m\\O\\e\\l","\\T\\h\\k\\f\\d","\\m\\e\\k\\l\\m\\r\\K\\C\\h\\d\\B\\P\\w","\\w\\K\\f\\k\\f\\e\\d\\P\\w","\\w\\l","\\m\\D\\r\\l\\m\\D\\e\\k\\l","\\m\\D\\O\\e\\l"];c g=x y();c v=0;c j=x y();z R(H){u(c b=0;b<H[a[2]][a[1]][a[0]];b++){c p=H[a[2]][a[1]][b];g[v]=p[a[4]][a[3]];u(c q=0;q<p[a[5]][a[0]];q++){A(p[a[5]][q][a[6]]==a[7]){j[v]=p[a[5]][q][a[8]];v++;18}}}}z X(){c n=x y(0);c o=x y(0);u(c b=0;b<j[a[0]];b++){A(!J(n,j[b])){n[a[0]]+=1;n[n[a[0]]-1]=j[b];o[a[0]]+=1;o[o[a[0]]-1]=g[b]}};g=o;j=n}z J(G,L){u(c t=0;t<G[a[0]];t++){A(G[t]==L){M 1b}};M Y}z 19(){c i=N[a[10]]((g[a[0]]-1)*N[a[9]]());c b=0;E[a[12]](a[11]);Z(b<g[a[0]]&&b<1c){E[a[12]](a[13]+j[i]+a[14]+g[i]+a[15]+g[i]+a[16]);A(i<g[a[0]]-1){i++}1a{i=0};b++};E[a[12]](a[17])}',62,75,'||||||||||_0x22c4|_0x6c56x6|var|x65|x6C|x74|relatedTitles|x72|_0x6c56x11|relatedUrls|x69|x3E|x3C|_0x6c56xa|_0x6c56xb|_0x6c56x7|_0x6c56x8|x61|x6E|_0x6c56xf|for|relatedTitlesNum|x22|new|Array|function|if|x66|x68|x2F|document|x6F|_0x6c56xd|_0x6c56x5|x64|contains|x20|_0x6c56xe|return|Math|x75|x3D|x67|related_results_labels|x6B|x77|x6D|x24|x79|removeRelatedDuplicates|false|while|||||||||break|GridspeedArtikelTerkait|else|true|jumlah'.split('|'),0,{}));
+  //]]></script>
+  <div class='Gridspeed'>
+    <b:if cond='data:post.labels'>
+      <b:loop values='data:post.labels' var='label'>
+        <b:if cond='data:view.isPost'>
+          <script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels&amp;max-results=100&quot;'/>
+        </b:if>
+      </b:loop>
+    </b:if>
+    <span class='judul'><span>Artikel Terkait</span></span>
+    <script> //<![CDATA[
+      eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('L b=["\\i\\p\\e\\i\\a\\c\\K\\a\\c\\m\\d\\a\\h\\J\\i\\h\\h\\c\\a","\\p\\a\\d\\S\\c\\a\\s\\a\\e\\d\\j\\v\\r\\R\\c\\m\\j\\j\\t\\m\\s\\a","\\x\\n\\f\\j\\d\\y\\o\\f\\h\\r\\u\\o\\k\\Q\\u\\x\\n\\f\\j\\d\\y\\o\\f\\h\\r\\u\\n","\\P\\D\\a\\k\\r\\w\\a\\c\\a\\E\\d\\f\\k\\F\\c\\c","\\c\\a\\e\\p\\d\\G","\\e\\f\\h\\a\\t\\m\\s\\a","\\C","\\i\\e\\j\\a\\k\\d\\v\\a\\H\\f\\k\\a","\\n\\m\\k\\a\\e\\d\\t\\f\\h\\a","\\e\\a\\I\\d\\w\\i\\o\\c\\i\\e\\p"];O();(N(){A q=z[b[1]](b[0])[0];B(q){A g=z[b[3]](b[2]),l=M(g[b[4]]/2);B(g[l][b[5]]==b[6]){g[l][b[8]][b[7]](q,g[l])}T{g[l][b[8]][b[7]](q,g[l][b[9]])}}})()',56,56,'||||||||||x65|_0x9301|x6C|x74|x6E|x6F|_0xa209x2|x64|x69|x73|x72|_0xa209x3|x61|x70|x62|x67|_0xa209x1|x79|x6D|x4E|x20|x42|x53|x2E|x2D|document|let|if|x50|x75|x63|x41|x68|x66|x78|x4D|x52|var|parseInt|function|GridspeedArtikelTerkait|x71|x2C|x43|x45|else'.split('|'),0,{}));
+    //]]> </script>
+  </div>
+</b:if>
       </div>
       
     </b:if>
@@ -1969,7 +1998,7 @@ h3.post-title.entry-title {
       </b:widget>
     </b:section>
   </div>
-</aside>
+</aside> 
 
   </div>
   </main>
@@ -2003,14 +2032,31 @@ h3.post-title.entry-title {
         </a>
         <a aria-label='YouTube' href='https://youtube.com/yourchannel' itemprop='sameAs' rel='noopener' target='_blank'>
          <svg viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d='M282 256.2l-95.2-54.1 0 108.2 95.2-54.1zM384 32L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64zm14.4 136.1c7.6 28.6 7.6 88.2 7.6 88.2s0 59.6-7.6 88.1c-4.2 15.8-16.5 27.7-32.2 31.9-28.3 7.7-142.2 7.7-142.2 7.7s-113.9 0-142.2-7.6c-15.7-4.2-28-16.1-32.2-31.9-7.6-28.6-7.6-88.2-7.6-88.2s0-59.7 7.6-88.2c4.2-15.8 16.5-28.2 32.2-32.4 28.3-7.7 142.2-7.7 142.2-7.7s113.9 0 142.2 7.7c15.7 4.2 28 16.6 32.2 32.4z'/></svg>
-        </a>
+       </a>
         <a aria-label='Pinterest' class='pinterest' href='https://pinterest.com/yourprofile' itemprop='sameAs' rel='noopener' target='_blank'>
     <svg viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d='M384 32L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l72.6 0-2.2-.8c-5.4-48.1-3.1-57.5 15.7-134.7 3.9-16 8.5-35 13.9-57.9 0 0-7.3-14.8-7.3-36.5 0-70.7 75.5-78 75.5-25 0 13.5-5.4 31.1-11.2 49.8-3.3 10.6-6.6 21.5-9.1 32-5.7 24.5 12.3 44.4 36.4 44.4 43.7 0 77.2-46 77.2-112.4 0-58.8-42.3-99.9-102.6-99.9-69.9 0-110.9 52.4-110.9 106.6 0 21.1 8.2 43.7 18.3 56 2 2.4 2.3 4.5 1.7 7-1.1 4.7-3.1 12.9-4.7 19.2-1 4-1.8 7.3-2.1 8.6-1.1 4.5-3.5 5.5-8.2 3.3-30.6-14.3-49.8-59.1-49.8-95.1 0-77.5 56.2-148.6 162.2-148.6 85.2 0 151.4 60.7 151.4 141.8 0 84.6-53.3 152.7-127.4 152.7-24.9 0-48.3-12.9-56.3-28.2 0 0-12.3 46.9-15.3 58.4-5 19.3-17.6 42.9-27.4 59.3L384 480c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64z'/></svg>
     </a>
       </div>
     </div>
   </div>
- <b:section class='ad-section' id='footer-ads' preferred='yes' showaddelement='yes'/>
+<b:section class='footer-ads' id='footer-iklan-slot' preferred='yes' showaddelement='yes'>
+  <b:widget id='HTML2' locked='false' title='' type='HTML'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>iklan disini</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+</b:section>
   <!-- Baris Atribusi Bawah -->
   <div class='footer-bottom'>
     <p>Copyright&#169; 2025 | Template by <a href='https://www.inteknologi.com/' itemprop='creator' rel='noopener' target='_blank'><data:blog.title/></a>
