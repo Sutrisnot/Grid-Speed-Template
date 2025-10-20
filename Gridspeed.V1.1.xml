@@ -163,7 +163,7 @@ figure{margin:0}
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
   /* Breakpoints */
-  --breakpoint-sm: 576px;
+  --breakpoint-sm: 576px; 
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
@@ -253,7 +253,34 @@ body{font-family:var(--font-family);background-color:var(--bg-color);color:var(-
 .header-below-wrapper .header-container > .sidebar-below-header:only-child { flex: 1 1 100%;max-width: 100%; }
 .header-below-wrapper .featured-below {flex: 1 1 calc(50% - 10px); max-width: calc(50% - 10px);box-sizing: border-box;}
 .header-below-wrapper .sidebar-below-header {flex: 1 1 calc(50% - 10px);  max-width: calc(50% - 10px);box-sizing: border-box;}
+/* 1. Membuat Section menjadi FULL-WIDTH */
+#ads_below_header {
+  width: 100%; /* Memastikan lebar penuh */
+  padding: 0; /* Hapus padding bawaan jika ada */
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: #f5f5f5; */ 
+}
 
+/* 2. Membuat Konten di dalamnya (Wrapper) menjadi BOXED */
+#ads_below_header .ads-content-wrapper {
+  /* Atur lebar maksimum sesuai dengan lebar konten utama template Anda */
+  max-width: 1200px; /* Ganti angka ini sesuai lebar template Anda */
+  
+  /* PENTING: Untuk memposisikan konten di tengah */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Tambahkan padding agar konten tidak menempel di tepi layar */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* 3. Tambahan: Agar widget itu sendiri tidak mengganggu tata letak */
+#ads_below_header .widget {
+  padding: 0; 
+  margin: 0;
+}
 /* === FEATURED POST DI BAWAH HEADER === */ 
 #FeaturedPost2 h2.title {display: none;}
 .featured-below-section {width: 100%;margin: 20px auto;padding: 0 15px;}
@@ -305,7 +332,8 @@ body{font-family:var(--font-family);background-color:var(--bg-color);color:var(-
 .post-meta span{margin-right:15px}
 .read-more{display:inline-block;align-self:flex-start;padding:8px 20px;border-radius:4px;text-decoration:none;font-weight:bold;background:#333;color:white;transition:all .3s ease}
 .read-more:hover{-webkit-transform:translateY(-2px);-moz-transform:translateY(-2px);-ms-transform:translateY(-2px);-o-transform:translateY(-2px);transform:translateY(-2px)}
-.breadcrumbs-tech{display:flex;align-items:center;flex-wrap:wrap;padding:5px 15px;margin-bottom:15px;border-radius:6px;border:1px solid rgba(0,196,255,.2);box-shadow:0 0 10px rgba(0,196,255,.1);font-size:12px;background:linear-gradient(90deg,rgba(230,225,225,1) 0%,rgba(255,255,255,1) 100%)}
+.breadcrumbs-tech{display:flex;align-items:center;flex-wrap:wrap;padding:5px 15px;margin-bottom:15px;border-radius:6px;border:1px solid rgba(0,196,255,.2);box-shadow:0 0 10px rgba(0,196,255,.1);font-size:12px;background: #ffffff;
+background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(242, 216, 216, 1) 50%, rgba(255, 255, 255, 1) 100%);}
 .breadcrumbs-tech a{display:inline-flex;align-items:center;text-decoration:none;color:#333;transition:color .3s ease}
 .breadcrumbs-tech a:hover{color:#00c4ff}
 .breadcrumbs-tech .current-page{font-weight:600;color:#00c4ff}
@@ -433,9 +461,7 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: .8rem;color:
 .footer-bottom{text-align:left;padding:10px 15px;background:#333}
 .footer-bottom a{color:#ccc;text-decoration:none}
 .footer-bottom a:hover{color:#fff}
-
 /* ======================================================= 7. MEDIA QUERIES ======================================================= */
-
 @media (min-width:769px){
 #searchbox input[type="text"]{right:40px;left:auto}#menu-toggle,.hamburger-menu{display:none!important;visibility:hidden}
 aside#sidebar-below-header #PopularPosts2 .item-thumbnail {width: 80px;height: 60px;}
@@ -562,15 +588,106 @@ code {background:#f3f7f9;padding: 2px 6px;border-radius: 3px;color: #343434;bord
 #ads_below_header { border:1px solid gray ;width: 100%}
 
 /* === ARTIKEL TERKAIT TANPA GAMBAR === */
-.Gridspeed {--warna-utama: #0d47a1;--warna-hover: #ff6f00;background: #fff;border-radius: 8px;box-shadow: 0 4px 12px rgba(0,0,0,0.08);padding: 10px;margin: 20px 0;font-family: "Inter", "Roboto", Arial, sans-serif;}
+.Gridspeed {background: #fff;border-radius: 8px;box-shadow: 0 4px 12px rgba(0,0,0,0.08);padding: 10px;margin: 20px 0;font-family: "Inter", "Roboto", Arial, sans-serif;}
 .Gridspeed .judul {display: block;text-align: center;font-size: 17px;font-weight: 700;margin-bottom: 12px;color: var(--warna-utama);text-transform: uppercase;letter-spacing: 0.5px;}
 .Gridspeed ul {list-style: none;margin: 0;padding: 0;display: flex;flex-direction: column;gap:5px;}
 .Gridspeed li {background: #f9f9f9;border-radius: 6px;transition: all 0.3s ease;}
 .Gridspeed li:hover {background: #fff5eb;border-left-color: var(--warna-hover);transform: translateX(3px);}
 .Gridspeed li a {display: block;padding: 8px 10px;color: #333;font-weight: 400;text-decoration: none;transition: color 0.3s ease;}
 .Gridspeed li a:hover {color: var(--primary-color);}
+/* =======================================
+   2. DARK MODE STYLES (CSS) - VERSI AKHIR DAN LENGKAP
+   ======================================= */
+html, body, .main-wrapper, .header-wrapper, .post-body, .widget-content, .FeaturedPost, #FeaturedPost, .post, .post-item, .post-info, h1, h2, h3, h4, h5, p, a, li, ul, div {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;}
+
+#darkModeToggle {position: fixed;top: 100px;right: 20px;z-index: 9999;cursor: pointer; background-color: #424242; color: white; border: none;border-radius: 50%; width: 45px;height: 45px;display: flex;align-items: center;justify-content: center;font-size: 20px;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); opacity: 0.9;}
+
+#darkModeToggle:hover {background-color: #555555;opacity: 1;}
+
+.dark-mode {
+  --main-bg-color: #1a1a1a;    /* Latar belakang utama (Body) */
+  --card-bg-color: #2c2c2c;    /* Latar belakang kartu/elemen */
+  --hover-bg-color: #383838;   /* Latar belakang saat di-hover */
+  --text-color-white: #ffffff;
+  --link-color: #79abff;
+  --border-color: #444444;
+}
+
+/* * PENEGASAN LATAR BELAKANG CONTAINER UTAMA * */
+
+/* 1. MENGUBAH LATAR BELAKANG BODY DENGAN PRIORITAS TERTINGGI */
+body.dark-mode {
+  background-color: var(--main-bg-color) !important;
+  background: var(--main-bg-color) !important; 
+  color: var(--text-color-white) !important;
+}
+.dark-mode .post-breadcrumb,.dark-mode #breadcrumb-container,.dark-mode .breadcrumbs-tech { background-color: var(--card-bg-color) !important;background: var(--card-bg-color) !important;border-color: var(--border-color) !important;}
+
+.dark-mode .sidebar h2 {background-color: var(--card-bg-color) !important;background: var(--card-bg-color) !important; border-color: var(--border-color) !important;}
+
+.dark-mode .related-posts,.dark-mode .related-posts-section,.dark-mode .GridSpeed {background-color: var(--card-bg-color) !important;background: var(--card-bg-color) !important;border-color: var(--border-color) !important;}
+
+.dark-mode #ads_below_header, .dark-mode .ads-section, .dark-mode #HTML1, .dark-mode #HTML\\.v4, .dark-mode #HTML\\.v4 .widget-content,.dark-mode #HTML1 .widget-content {
+  background-color: var(--main-bg-color) !important;background: var(--main-bg-color) !important;margin: 0 !important; padding: 0 !important; border: none !important;box-shadow: none !important;}
+
+.dark-mode .header-below-wrapper,.dark-mode .header-below-wrapper .header-container,.dark-mode .featured-below-section {background-color: var(--main-bg-color) !important;background: var(--main-bg-color) !important;border-color: var(--border-color) !important;}
+
+.dark-mode .featured-below-section .post-summary,.dark-mode .main-wrapper,.dark-mode .post-body,.dark-mode .widget-content,.dark-mode .footer-wrapper,.dark-mode .post {background-color: var(--card-bg-color) !important;background: var(--card-bg-color) !important;border-color: var(--border-color) !important;}
+
+.dark-mode .post-summary:hover,.dark-mode .post-item:hover,.dark-mode .post:hover {
+  background-color: var(--hover-bg-color) !important;background: var(--hover-bg-color) !important;box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15) !important; }
+
+.dark-mode *, 
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode p, .dark-mode li,
+.dark-mode .post-title a, .dark-mode .post-info span,.dark-mode .post-body {
+  color: var(--text-color-white) !important;}
+
+.dark-mode a {color: var(--link-color) !important;}
+.dark-mode input[type="text"],.dark-mode input[type="email"],.dark-mode textarea {
+  background-color: #383838 !important;color: var(--text-color-white) !important;border: 1px solid var(--border-color) !important;}
+.Gridspeed {background: #222222; /* Latar belakang gelap */box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); /* Bayangan yang lebih gelap */}
+.Gridspeed:hover {box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);}
+.Gridspeed .judul { color: var(--warna-utama, #f0f0f0); }
+.Gridspeed .judul::after {background: var(--warna-utama, #007bff);}
+.Gridspeed li {background: #333333; border-left-color: #555555;}
+.Gridspeed li a {color: #cccccc; }
+.Gridspeed li a:hover {color: var(--primary-color, #8ab4f8);}}
+@media (prefers-color-scheme: dark) {
+
+    .post-body ul li, 
+    .post-body ol li {color: #cccccc; }
+    .post-body ul li::before { display:none;color: #f0f0f0; }
+    .post-body ol li {color: #cccccc;}
+    .post-body ol li p,.post-body ol li span, .post-body ol li div {color: #e0e0e0; }
+
+    .post-body blockquote {background-color: #2a2a2a; border-left-color: var(--primary-color, #8ab4f8);color: #b0b0b0;}
+    .post-body ul li::before {color: #f0f0f0 !important; }
+    .post-body ul li {color: #cccccc; 
+    }
+}
 
  ]]></b:skin>
+  
+  <b:if cond='data:view.isPage'>
+  <style>
+    /* ============================================== */
+    /* KONDISI UNTUK SEMUA HALAMAN STATIS (PAGES)     */
+    /* ============================================== */
+
+    /* 1. Menghilangkan Sidebar */
+    #sidebar-wrapper {      
+        display: none !important;
+    }
+    .blog-posts .post-outer-container:not(.page) {display: none !important; }
+
+    #main-wrapper {  width: 100% !important; max-width: none !important;float: none !important; /* Hapus properti float yang digunakan untuk tata letak kolom */margin: 0 !important;padding: 0 !important;} .content-wrapper { display: grid
+;
+    grid-template-columns: 2fr;}
+    /* 4. Menyesuaikan Konten Halaman Statis (Opsional: Agar konten tidak terlalu lebar) */
+    .page .post-body,.page .post-footer {max-width: 1000px; /* Lebar maksimum yang nyaman dibaca */ margin: 0 auto !important;    /* Posisikan di tengah */ padding: 20px;box-sizing: border-box; }
+  </style>
+</b:if>
   
   <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <style>
@@ -716,7 +833,9 @@ h3.post-title.entry-title {
 }
 </script>
 </b:if>
-
+<button aria-label='Toggle Dark Mode' id='darkModeToggle'>
+  <span id='darkModeIcon'>🌙</span> 
+</button>
 <!-- ===== HEADER===== -->
 <header class='main-header'>
   <div class='header-container'>
@@ -2371,6 +2490,51 @@ document.addEventListener("DOMContentLoaded", function() {
 });
   //]]>
 </script>
+<script>
+// <![CDATA[
+document.addEventListener("DOMContentLoaded", function() {
+  const toggleButton = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const icon = document.getElementById('darkModeIcon');
+  const darkModeClass = 'dark-mode';
+  const storageKey = 'darkModeEnabled';
 
+  if (!toggleButton || !body || !icon) {
+    console.error('Dark Mode elements not found. Check HTML IDs.');
+    return;
+  }
+
+  // Fungsi untuk mengatur mode
+  function setDarkMode(isEnabled) {
+    if (isEnabled) {
+      body.classList.add(darkModeClass);
+      icon.textContent = '☀️'; // Ikon Matahari (untuk mode terang)
+      localStorage.setItem(storageKey, 'true');
+    } else {
+      body.classList.remove(darkModeClass);
+      icon.textContent = '🌙'; // Ikon Bulan (untuk mode gelap)
+      localStorage.setItem(storageKey, 'false');
+    }
+  }
+
+  // 1. Cek Preferensi yang Tersimpan (LocalStorage)
+  const savedPreference = localStorage.getItem(storageKey);
+  
+  if (savedPreference !== null) {
+    setDarkMode(savedPreference === 'true');
+  } else {
+    // Cek preferensi sistem operasi
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(prefersDark); 
+  }
+
+  // 2. Event Listener untuk Tombol Toggle
+  toggleButton.addEventListener('click', function() {
+    const isCurrentlyDark = body.classList.contains(darkModeClass);
+    setDarkMode(!isCurrentlyDark); // Alihkan mode
+  });
+});
+// ]]>
+</script>
 </body>
 </html>
