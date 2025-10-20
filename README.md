@@ -1,5 +1,5 @@
 # Grid-Speed-Template  
-Template Premium Gratis. Fully Responsive    
+Template Premium Gratis. Fully Responsive dengan Dark-Mode    
 🌐 Browser Support  
   Browser	Version	Status
 Chrome	60+	✅ Fully Supported  
