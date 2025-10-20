@@ -474,7 +474,14 @@ aside#sidebar-below-header #PopularPosts2 .item-title {font-size: 0.9rem;}}
 #menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}#menu-toggle.active span:nth-child(2){opacity:0!important;transform:translateX(100%)!important}#menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
 .mobile-nav.show{margin-top:10px;}
 .mobile-nav a { text-align:center }
-#footer-ads .widget-content {margin: 15px 10px;padding: 12px;}}
+#footer-ads .widget-content {margin: 15px 10px;padding: 12px;}
+
+.html-parser-textarea { max-width: 100%;height: 400px;margin-top: 15px;}
+.html-parser-wrapper input[type="button"] {display: block; width: calc(100% - 10px); margin: 5px auto; }
+.html-parser-textarea {max-width: 100%;}
+.html-parser-wrapper input[type="button"] {display: block;width: calc(100% - 10px);
+margin: 5px auto;}
+}
 
 @media (max-width:576px){
 .content-wrapper{grid-template-columns:1fr;gap:1.5rem}.sidebar{margin-top:20px}.post-grid{grid-template-columns:100px 1fr;gap:15px}.post-thumbnail-side img{width:100px;height:75px}.post-meta{grid-column:1 / -1}.footer-top{flex-direction:column;align-items:center;text-align:center}.footer-right{margin-top:10px}.social-icons a{margin:0 10px}.popular-posts .item-thumbnail{width:70px;height:55px}.popular-posts .item-title{font-size:.9rem}.popular-posts .item-snippet{-webkit-line-clamp:1}
@@ -666,6 +673,7 @@ body.dark-mode {
     .post-body ul li {color: #cccccc; 
     }
 }
+.html-parser-textarea {max-width: 650px; width: 100%; background: #f8f8f8; border: 1px solid #ccc;  height: 300px; /* Ketinggian default */ box-sizing: border-box; display: block; margin: 0 auto 10px;}
 
  ]]></b:skin>
   
