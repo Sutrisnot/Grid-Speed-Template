@@ -559,9 +559,9 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.7rem;}.fea
 .featured-below-section p {font-size: 0.8rem;}
 .mobile-nav.show{margin-top: 43px;}}
 
-pre {max-width: 100%;max-height: 40vh;overflow-y: auto;overflow-x: auto;white-space: pre-wrap;word-wrap: break-word;padding: 15px;background:#f3f7f9;color: #d4d4d4;border: 2px solid #191970;padding-left:20px;border-radius:5px;}
+pre {max-width: 100%;max-height: 40vh;overflow-y: auto;overflow-x: auto;white-space: pre-wrap;word-wrap: break-word;padding: 15px;background:4F4F4F;color: #d4d4d4;border: 3px solid #9C9C9C;padding-left:20px;border-radius:5px;margin-bottom:5px;}
 pre, code {font-family: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;font-size: 15px;line-height: 1.5;}
-code {background:#f3f7f9;padding: 2px 6px;border-radius: 3px;color: #343434;border:1px solid color; }
+code {background:4F4F4F;padding: 2px 6px;border-radius: 3px;color: #343434;border:1px solid color; }
 
 #backToTopBtn{display:none;position:fixed;bottom:50px;right:20px;z-index:99;border:none;outline:none;background-color:#04AA6D;color:white;cursor:pointer;padding:12px 15px;border-radius:50%;font-size:18px;opacity:.8;transition:opacity .3s,transform .3s;box-shadow:0 2px 5px rgba(0,0,0,.3)}
 #backToTopBtn:hover{opacity:1;background-color:#038d59}
@@ -673,6 +673,7 @@ body.dark-mode {
     .post-body ul li {color: #cccccc; 
     }
 }
+
 .html-parser-textarea {max-width: 650px; width: 100%; background: #f8f8f8; border: 1px solid #ccc;  height: 300px; /* Ketinggian default */ box-sizing: border-box; display: block; margin: 0 auto 10px;}
 
  ]]></b:skin>
@@ -2462,20 +2463,20 @@ document.addEventListener('DOMContentLoaded', function() {
 //]]>
 </script>
 <script>
-  <![CDATA[
-document.addEventListener("DOMContentLoaded", function() {
+// ===== IN-ARTICLE ADS =====
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
   // Jalankan hanya di halaman posting
-  if (!document.body.classList.contains('item-view')) return;
+  if (!document.body.classList.contains(&#39;item-view&#39;)) return;
 
-  const article = document.querySelector('.post-body, .entry-content');
+  const article = document.querySelector(&#39;.post-body, .entry-content&#39;);
   if (!article) return;
 
   // Ambil konten iklan dari widget section
-  const ad1 = document.querySelector('#ads_in_article_1 .widget-content');
-  const ad2 = document.querySelector('#ads_in_article_2 .widget-content');
+  const ad1 = document.querySelector(&#39;#ads_in_article_1 .widget-content&#39;);
+  const ad2 = document.querySelector(&#39;#ads_in_article_2 .widget-content&#39;);
 
   // Ambil semua paragraf artikel
-  const paragraphs = article.querySelectorAll('p');
+  const paragraphs = article.querySelectorAll(&#39;p&#39;);
   if (paragraphs.length === 0) return;
 
   // Tentukan posisi sisipan
@@ -2483,20 +2484,19 @@ document.addEventListener("DOMContentLoaded", function() {
   const lastIndex = paragraphs.length - 1;
 
   // Sisipkan iklan pertama di tengah artikel
-  if (ad1 && paragraphs[middleIndex]) {
+  if (ad1 &amp;&amp; paragraphs[middleIndex]) {
     const clone1 = ad1.cloneNode(true);
-    clone1.classList.add('ads-inserted');
-    paragraphs[middleIndex].insertAdjacentElement('afterend', clone1);
+    clone1.classList.add(&#39;ads-inserted&#39;);
+    paragraphs[middleIndex].insertAdjacentElement(&#39;afterend&#39;, clone1);
   }
 
   // Sisipkan iklan kedua di akhir artikel
-  if (ad2 && paragraphs[lastIndex]) {
+  if (ad2 &amp;&amp; paragraphs[lastIndex]) {
     const clone2 = ad2.cloneNode(true);
-    clone2.classList.add('ads-inserted');
-    paragraphs[lastIndex].insertAdjacentElement('afterend', clone2);
+    clone2.classList.add(&#39;ads-inserted&#39;);
+    paragraphs[lastIndex].insertAdjacentElement(&#39;afterend&#39;, clone2);
   }
 });
-  //]]>
 </script>
 <script>
 // <![CDATA[
