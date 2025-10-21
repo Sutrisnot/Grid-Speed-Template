@@ -9,7 +9,8 @@
 <title><b:if cond='data:blog.pageType == &quot;index&quot;'><data:blog.title/> | <data:blog.pageTitle/><b:else/><data:blog.pageName/> | <data:blog.title/></b:if></title>
 <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : &quot;Blog teknologi dan tutorial coding terbaru&quot;' name='description'/>
 <meta content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' name='robots'/>
-
+<!-- VS CODE DARK THEME -->
+<link href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css' rel='stylesheet'/>
 <!-- Canonical URL - FIXED -->
 <b:if cond='data:blog.url == data:blog.homepageUrl'>
   <link expr:href='data:blog.homepageUrl' rel='canonical'/>
@@ -559,9 +560,9 @@ aside#sidebar-below-header #PopularPosts2 .item-snippet {font-size: 0.7rem;}.fea
 .featured-below-section p {font-size: 0.8rem;}
 .mobile-nav.show{margin-top: 43px;}}
 
-pre {max-width: 100%;max-height: 40vh;overflow-y: auto;overflow-x: auto;white-space: pre-wrap;word-wrap: break-word;padding: 15px;background:4F4F4F;color: #d4d4d4;border: 3px solid #9C9C9C;padding-left:20px;border-radius:5px;margin-bottom:5px;}
+pre {max-width: 100%;max-height: 40vh;overflow-y: auto;overflow-x: auto;white-space: pre-wrap;word-wrap: break-word;padding: 5px;border: 3px solid #9C9C9C;padding-left:5px;border-radius:5px;margin-bottom:5px;}
 pre, code {font-family: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;font-size: 15px;line-height: 1.5;}
-code {background:4F4F4F;padding: 2px 6px;border-radius: 3px;color: #343434;border:1px solid color; }
+code {padding: 2px 6px;border-radius: 3px;color: #343434;border:1px solid #630202; }
 
 #backToTopBtn{display:none;position:fixed;bottom:50px;right:20px;z-index:99;border:none;outline:none;background-color:#04AA6D;color:white;cursor:pointer;padding:12px 15px;border-radius:50%;font-size:18px;opacity:.8;transition:opacity .3s,transform .3s;box-shadow:0 2px 5px rgba(0,0,0,.3)}
 #backToTopBtn:hover{opacity:1;background-color:#038d59}
@@ -2543,6 +2544,18 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 // ]]>
+</script>
+  <script>
+// Load JS only if code blocks exist
+if (document.querySelector(&#39;pre code&#39;)) {
+    var script = document.createElement(&#39;script&#39;);
+    script.src = &#39;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js&#39;;
+    script.async = true;
+    script.onload = function() {
+        hljs.highlightAll();
+    };
+    document.head.appendChild(script);
+}
 </script>
 </body>
 </html>
